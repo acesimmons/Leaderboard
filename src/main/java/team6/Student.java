@@ -1,42 +1,48 @@
 package team6;
-import java.io.IOException;
+
 
 public class Student {
-	private String[] studentWorkingData;
-	private String[] studentRowData;
-	private String[] studentColData;
-	Student(){
-		 setStudentData();
-	}
-	private void setStudentData(){
-		CSVHandler handler = new CSVHandler("data/students.csv");
-		try {
-			handler.readCSVFromFile();
-			studentWorkingData = handler.getWorkingData();
-			studentRowData = handler.getrowData();
-			studentColData = handler.getcolData();
-			System.out.println(studentColData[0]);
-			System.out.println(studentRowData[1]);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	private String id;
+	private String firstName;
+	private String email;
+	private String lastName;
+	public Student(){
+		id = "";
+		firstName = "";
+		email = "";
+		lastName = "";
 	}
 	
-	public void setIDInfo(String ID){
+	public String getId() {
 		
+		return id;
 	}
 	
-	public String getIDInfo(){
-		return "";
+	public void setId(String id) {
+		this.id = id;
 	}
-	
-	public String[] getStudentWorkingData(){
-		return studentWorkingData;
+	public void setFirstName(String firstName){
+		this.firstName = firstName;
 	}
-	public String[] getStudentRowData(){
-		return studentRowData;
+	public void setLastName(String lastName){
+		this.lastName = lastName;
 	}
-	public String[] getStudentColData(){
-		return studentColData;
+	public void setEmail(String email){
+		this.email = email;
 	}
+	public String getEmail(){
+		return email;
+	}
+	public String getFirstName(){
+		return firstName;
+	}
+	public String getLastName(){
+		return lastName;
+	}
+	public String toString(){
+		String info = "";
+		info = "[" + id + "] " + firstName + " " + lastName + " " + email + "@jsu.edu";
+		return info;
+	}
+
 }
