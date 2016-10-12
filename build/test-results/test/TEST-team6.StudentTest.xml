@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.StudentTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-10-10T17:16:50" hostname="MSI" time="0.004">
+<testsuite name="team6.StudentTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-10-12T00:14:21" hostname="MSI" time="0.002">
   <properties/>
-  <testcase name="testSetGetFirstName" classname="team6.StudentTest" time="0.003"/>
+  <testcase name="testSetGetFirstName" classname="team6.StudentTest" time="0.002"/>
   <testcase name="testToString" classname="team6.StudentTest" time="0.0"/>
   <testcase name="testSetGetEmail" classname="team6.StudentTest" time="0.0"/>
   <testcase name="testSetGetLastName" classname="team6.StudentTest" time="0.0"/>

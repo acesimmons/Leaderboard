@@ -49,6 +49,7 @@ public class StudentTest{
 		s.setEmail("mabbott");
 		assertEquals("[111128] Maritza Abbott mabbott@jsu.edu", s.toString());
 	}
+	
 }
 
 
