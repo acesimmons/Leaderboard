@@ -16,11 +16,11 @@ public class CSVHandler {
 
 	
 	
-	CSVHandler(){
+	CSVHandler(String filePath){
 		workingData = new String[350];
 		rowData = new String[350];
 		colData = new String[350];
-		this.filePath= "src/main/resources/students.csv";
+		this.filePath= filePath;
 		
 
 	}

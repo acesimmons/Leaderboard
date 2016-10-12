@@ -12,7 +12,7 @@ public class CSVHandlerTest{
 	
 	@Test
 	public void testColumnData(){
-		CSVHandler handler = new CSVHandler();
+		CSVHandler handler = new CSVHandler(" ");
 		String[] colData;
 		String[] newColData = {"12345", "101", "5555"};
 		handler.setColData(newColData);
@@ -22,7 +22,7 @@ public class CSVHandlerTest{
 	}
 	@Test
 	public void testRowData(){
-		CSVHandler handler = new CSVHandler();
+		CSVHandler handler = new CSVHandler(" ");
 		String[] rowData;
 		String[] newRowData = {"12345", "101", "5555"};
 		handler.setRowData(newRowData);
@@ -32,7 +32,7 @@ public class CSVHandlerTest{
 	}
 	@Test
 	public void testWorkingData(){
-		CSVHandler handler = new CSVHandler();
+		CSVHandler handler = new CSVHandler(" ");
 		String[] workingData;
 		String[] newWorkingData = {"12345", "101", "5555"};
 		handler.setWorkingData(newWorkingData);
@@ -43,11 +43,11 @@ public class CSVHandlerTest{
 	@Test
 	public void testReadFromCSV() throws IOException{
 		String[] colData;
-		CSVHandler handler = new CSVHandler();
+		CSVHandler handler = new CSVHandler("src/test/resources/courses.csv");
 		handler.readCSVFromFile();
 		colData = handler.getColData();
 		System.out.println(colData[0]);
-		assertEquals("ID", colData[0]);
+		assertEquals("99000", colData[0]);
 	}
 }
 
