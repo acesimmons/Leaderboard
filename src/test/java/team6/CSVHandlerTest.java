@@ -56,12 +56,19 @@ public class CSVHandlerTest{
 		assertEquals("[Spring, 2013, 11]", workingData[0]);
 	}
 	@Test
-	public void testAssembleInfoBasedOnID(){
-		String[] info;
+	public void testAssembleInfoBasedOnID() throws IOException{
+		List info = new ArrayList();
+		String fullInfo = "";
+		String[] colData;
 		CSVHandler handler = new CSVHandler("src/test/resources/students.csv");
 		handler.readCSVFromFile();
-		info = handler.getInfoBasedOnID("111128");
-		assertEquals("111128, Maritza, Abbott ,mabbott", Arrays.toString(info));
+		colData = handler.getColData();
+		info = handler.getInfoBasedOnID("1111[28");
+		for(int i = 0; i < info.size(); i++){
+			fullInfo = fullInfo + info.get(i);
+		}
+
+		assertEquals("111128 Maritza Abbott mabbott ", fullInfo);
 	}
 }
 

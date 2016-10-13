@@ -2,6 +2,7 @@ package team6;
 
 import au.com.bytecode.opencsv.CSVReader;
 import au.com.bytecode.opencsv.CSVWriter;
+import java.util.*;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -96,14 +97,24 @@ public class CSVHandler {
 	public void setRowData(String[] newRowData){
 		rowData =  newRowData;
 	}
-	public void getInfoBasedOnID(String id){
+	public List<String> getInfoBasedOnID(String id){
+		String text = "";
+		List dataInfo = new ArrayList();
 		int position = getPositionBasedOnID(id);
+		dataInfo.add(colData[position]);
+		String w = workingData[position];
 		
-		
+		String[] workingInfo = w.split(",");
+		for(int i = 0; i < workingInfo.length; i++){
+			dataInfo.add(workingInfo[i]);
+		}
+		return dataInfo;
 	}
 	private int getPositionBasedOnID(String id){
-		int positionData;
+		int positionData = 0;
+		String w = "";
 		for(int i = 0;i < colData.length;i++){
+			w = colData[i];
 			if(colData[i] == id){
 				positionData = i;
 			}

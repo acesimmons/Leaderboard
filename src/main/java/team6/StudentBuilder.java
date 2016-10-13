@@ -18,8 +18,12 @@ public class StudentBuilder {
 		this.id = id;
 	}
 	
-	public String getId(){
+	public String getID(){
 		return id;
+	}
+	
+	public String format(){
+		return "";
 	}
 	
 	public void setDataBasedOnID(){

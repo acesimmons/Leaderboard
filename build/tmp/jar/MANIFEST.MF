@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Implementation-Title: CSV JSON
 Implementation-Version: 1.0
-Main-Class: edu.jsu.mcis.Main
+Main-Class: team6.Leaderboard
 

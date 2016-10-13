@@ -13,29 +13,21 @@ public class StudentBuilderTest{
 	@Test
 	public void setIDTest(){
 		StudentBuilder s = new StudentBuilder();
-		idValue = "111111";
+		String idValue = "111111";
 		s.setID(idValue);
-		assertEquals(idValue, s.getID());
+		String id = s.getID();
+		assertEquals(idValue, id);
 	}
 	
 	@Test
 	public void formatInformation(){
 		StudentBuilder s = new StudentBuilder();
-		idValue = "111128";
+		String idValue = "111128";
 		s.setID(idValue);
-		formatedData = s.format();
+		String formatedData = s.format();
 		assertEquals("[111128] Maritza Abbott mabbott@jsu.edu",formatedData);
 		
 		
-	}
-	
-	@Test
-	public void checkAgainstID(){
-		StudentBuilder s = new StudentBuilder();
-		idValue = "111111";
-		s.setID(idValue);
-		rawData = s.rawData();
-		assertEquals("[111111, Jerrod, Shields, jshields]",rawData);
 	}
 	
 }

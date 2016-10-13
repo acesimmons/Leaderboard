@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.CSVHandlerTest" tests="5" skipped="0" failures="1" errors="0" timestamp="2016-10-13T23:46:49" hostname="MSI" time="0.013">
+<testsuite name="team6.StudentBuilderTest" tests="2" skipped="0" failures="1" errors="0" timestamp="2016-10-13T23:46:49" hostname="MSI" time="0.001">
   <properties/>
-  <testcase name="testReadFromCSV" classname="team6.CSVHandlerTest" time="0.006"/>
-  <testcase name="testWorkingData" classname="team6.CSVHandlerTest" time="0.001"/>
-  <testcase name="testAssembleInfoBasedOnID" classname="team6.CSVHandlerTest" time="0.005">
-    <failure message="org.junit.ComparisonFailure: expected:&lt;1111[28 Maritza Abbott mabbott ]&gt; but was:&lt;1111[11[Jerrod Shields jshields]]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;1111[28 Maritza Abbott mabbott ]&gt; but was:&lt;1111[11[Jerrod Shields jshields]]&gt;
+  <testcase name="formatInformation" classname="team6.StudentBuilderTest" time="0.001">
+    <failure message="org.junit.ComparisonFailure: expected:&lt;[[111128] Maritza Abbott mabbott@jsu.edu]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[[111128] Maritza Abbott mabbott@jsu.edu]&gt; but was:&lt;[]&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
-	at team6.CSVHandlerTest.testAssembleInfoBasedOnID(CSVHandlerTest.java:70)
+	at team6.StudentBuilderTest.formatInformation(StudentBuilderTest.java:28)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -54,9 +52,7 @@
 	at java.lang.Thread.run(Thread.java:745)
 </failure>
   </testcase>
-  <testcase name="testRowData" classname="team6.CSVHandlerTest" time="0.0"/>
-  <testcase name="testColumnData" classname="team6.CSVHandlerTest" time="0.001"/>
-  <system-out><![CDATA[99000
-]]></system-out>
+  <testcase name="setIDTest" classname="team6.StudentBuilderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
