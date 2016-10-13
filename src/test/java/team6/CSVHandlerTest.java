@@ -43,11 +43,25 @@ public class CSVHandlerTest{
 	@Test
 	public void testReadFromCSV() throws IOException{
 		String[] colData;
+		String[] rowData;
+		String[] workingData;
 		CSVHandler handler = new CSVHandler("src/test/resources/courses.csv");
 		handler.readCSVFromFile();
 		colData = handler.getColData();
+		rowData = handler.getRowData();
+		workingData = handler.getWorkingData();
 		System.out.println(colData[0]);
 		assertEquals("99000", colData[0]);
+		assertEquals("ID", rowData[0]);
+		assertEquals("[Spring, 2013, 11]", workingData[0]);
+	}
+	@Test
+	public void testAssembleInfoBasedOnID(){
+		String[] info;
+		CSVHandler handler = new CSVHandler("src/test/resources/students.csv");
+		handler.readCSVFromFile();
+		info = handler.getInfoBasedOnID("111128");
+		assertEquals("111128, Maritza, Abbott ,mabbott", Arrays.toString(info));
 	}
 }
 

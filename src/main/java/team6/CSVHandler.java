@@ -96,4 +96,18 @@ public class CSVHandler {
 	public void setRowData(String[] newRowData){
 		rowData =  newRowData;
 	}
+	public void getInfoBasedOnID(String id){
+		int position = getPositionBasedOnID(id);
+		
+		
+	}
+	private int getPositionBasedOnID(String id){
+		int positionData;
+		for(int i = 0;i < colData.length;i++){
+			if(colData[i] == id){
+				positionData = i;
+			}
+		}
+		return positionData;
+	}
 }

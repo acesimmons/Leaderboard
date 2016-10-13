@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.CSVHandlerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-10-12T16:19:03" hostname="MSI" time="0.006">
+<testsuite name="team6.CSVHandlerTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2016-10-12T16:58:53" hostname="MSI" time="0.007">
   <properties/>
-  <testcase name="testReadFromCSV" classname="team6.CSVHandlerTest" time="0.006"/>
+  <testcase name="testReadFromCSV" classname="team6.CSVHandlerTest" time="0.005"/>
   <testcase name="testWorkingData" classname="team6.CSVHandlerTest" time="0.0"/>
   <testcase name="testRowData" classname="team6.CSVHandlerTest" time="0.0"/>
-  <testcase name="testColumnData" classname="team6.CSVHandlerTest" time="0.0"/>
+  <testcase name="testColumnData" classname="team6.CSVHandlerTest" time="0.001"/>
   <system-out><![CDATA[99000
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
