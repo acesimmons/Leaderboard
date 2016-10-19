@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.StudentTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-19T14:23:18" hostname="MSI" time="0.006">
+<testsuite name="team6.StudentTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-19T19:02:24" hostname="MSI" time="0.003">
   <properties/>
-  <testcase name="testGetDataBasedOnID" classname="team6.StudentTest" time="0.006"/>
+  <testcase name="testGetDataBasedOnID" classname="team6.StudentTest" time="0.003"/>
   <system-out><![CDATA[[111128] Maritza Abbott mabbott@jsu.edu
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="team6.LinkerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-10-19T19:02:24" hostname="MSI" time="0.009">
+  <properties/>
+  <testcase name="testGetInfoBasedOnCourse" classname="team6.LinkerTest" time="0.003"/>
+  <testcase name="testGetInfoBasedOnStudent" classname="team6.LinkerTest" time="0.003"/>
+  <testcase name="testGetInfoBasedOnInvalidInput" classname="team6.LinkerTest" time="0.002"/>
+  <system-out><![CDATA[[99018] Spring 2014 (16 students)
+[99018] Spring 2014 (16 students)
+[111128] Maritza Abbott mabbott@jsu.edu
+[111128] Maritza Abbott mabbott@jsu.edu
+THE REQUEST YOU MADE IS INVAILD
+USE ONLY student OR course WITH ID
+EXAMPLES student 111128
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
