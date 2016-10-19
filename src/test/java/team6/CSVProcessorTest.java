@@ -4,7 +4,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import java.io.*;
 import java.util.*;
-public class CSVHandlerTest{
+public class CSVProcessorTest{
 	@Before
     public void setUp() {
 		
@@ -13,7 +13,7 @@ public class CSVHandlerTest{
 	@Test
 	public void testCheckWorkingData() throws IOException{
 		String[] workingData;
-		CSVHandler handler = new CSVHandler("src/test/resources/courses.csv");
+		CSVProcessor handler = new CSVProcessor("src/test/resources/courses.csv");
 		workingData = handler.getWorkingData();
 		System.out.println(workingData[0]);
 		assertEquals("[Spring, 2013, 11]", workingData[0]);
@@ -24,7 +24,7 @@ public class CSVHandlerTest{
 	@Test
 	public void testCheckColData() throws IOException{
 		String[] colData;
-		CSVHandler handler = new CSVHandler("src/test/resources/courses.csv");
+		CSVProcessor handler = new CSVProcessor("src/test/resources/courses.csv");
 		colData = handler.getColData();
 		System.out.println(colData[0]);
 		assertEquals("99000", colData[0]);
@@ -37,7 +37,7 @@ public class CSVHandlerTest{
 		String[] colData;
 		String[] rowData;
 		String[] workingData;
-		CSVHandler handler = new CSVHandler("src/test/resources/courses.csv");
+		CSVProcessor handler = new CSVProcessor("src/test/resources/courses.csv");
 		colData = handler.getColData();
 		rowData = handler.getRowData();
 		workingData = handler.getWorkingData();

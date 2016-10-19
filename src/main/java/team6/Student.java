@@ -2,12 +2,12 @@ package team6;
 import java.io.IOException;
 
 public class Student {
-	private CSVHandler handler;
+	private CSVProcessor handler;
 	private String[] colData;
 	private String[] workingData;
 	
 	public Student() throws IOException{
-		handler = new CSVHandler("src/test/resources/students.csv");
+		handler = new CSVProcessor("src/test/resources/students.csv");
 	}
 	public String getStudentBasedOnID(String id) {
 		collectInformation();

@@ -9,13 +9,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class CSVHandler {
+public class CSVProcessor {
 	private String[] workingData;
 	private String[] rowData;
 	private String[] colData;
 	private String filePath;
 
-	public CSVHandler(String filePath) throws IOException{
+	public CSVProcessor(String filePath) throws IOException{
 		workingData = new String[350];
 		rowData = new String[350];
 		colData = new String[350];
@@ -59,18 +59,6 @@ public class CSVHandler {
 			
 		}
 		workingData[lineNum] = Arrays.toString(lineOfCSVData);
-		
-	}
-	
-	private String[] combinerowAndWorkingData(int lineNum){
-		String strdata;
-		String[] data;
-		strdata = rowData[lineNum] + "," + workingData[lineNum];
-		strdata = strdata.replace("[", "");
-		strdata = strdata.replace("]", "");
-		strdata = strdata.replace(", ", ",");
-		data = strdata.split(",");
-		return data;
 		
 	}
 	public String[] getWorkingData(){
