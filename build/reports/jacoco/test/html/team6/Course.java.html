@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Course.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Leaderboard</a> &gt; <a href="index.source.html" class="el_package">team6</a> &gt; <span class="el_source">Course.java</span></div><h1>Course.java</h1><pre class="source lang-java linenums">package team6;
+
+public class Course {
+	private String id;
+	private String semester;
+	private String year;
+	private String classSize;
+<span class="fc" id="L8">	public Course(){</span>
+<span class="fc" id="L9">		id = &quot;&quot;;</span>
+<span class="fc" id="L10">		semester = &quot;&quot;;</span>
+<span class="fc" id="L11">		classSize = &quot;&quot;;</span>
+<span class="fc" id="L12">		year = &quot;&quot;;</span>
+<span class="fc" id="L13">	}</span>
+	
+	public String getId() {
+		
+<span class="fc" id="L17">		return id;</span>
+	}
+	
+	public void setId(String id) {
+<span class="fc" id="L21">		this.id = id;</span>
+<span class="fc" id="L22">	}</span>
+	public void setSemester(String semester){
+<span class="fc" id="L24">		this.semester = semester;</span>
+<span class="fc" id="L25">	}</span>
+	public void setYear(String year){
+<span class="fc" id="L27">		this.year = year;</span>
+<span class="fc" id="L28">	}</span>
+	public void setClassSize(String classSize){
+<span class="fc" id="L30">		this.classSize = classSize;</span>
+<span class="fc" id="L31">	}</span>
+	public String getClassSize(){
+<span class="fc" id="L33">		return classSize;</span>
+	}
+	public String getSemester(){
+<span class="fc" id="L36">		return semester;</span>
+	}
+	public String getYear(){
+<span class="fc" id="L39">		return year;</span>
+	}
+	public String toString(){
+<span class="fc" id="L42">		String info = &quot;&quot;;</span>
+<span class="fc" id="L43">		info = &quot;[&quot; + id + &quot;] &quot; + semester + &quot; &quot; + year + &quot; (&quot; + classSize + &quot; students)&quot;;</span>
+<span class="fc" id="L44">		return info;</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

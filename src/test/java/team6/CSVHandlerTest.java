@@ -12,7 +12,7 @@ public class CSVHandlerTest{
 	
 	@Test
 	public void testColumnData(){
-		CSVHandler handler = new CSVHandler(" ");
+		CSVHandler handler = new CSVHandler();
 		String[] colData;
 		String[] newColData = {"12345", "101", "5555"};
 		handler.setColData(newColData);
@@ -22,7 +22,7 @@ public class CSVHandlerTest{
 	}
 	@Test
 	public void testRowData(){
-		CSVHandler handler = new CSVHandler(" ");
+		CSVHandler handler = new CSVHandler();
 		String[] rowData;
 		String[] newRowData = {"12345", "101", "5555"};
 		handler.setRowData(newRowData);
@@ -32,7 +32,7 @@ public class CSVHandlerTest{
 	}
 	@Test
 	public void testWorkingData(){
-		CSVHandler handler = new CSVHandler(" ");
+		CSVHandler handler = new CSVHandler();
 		String[] workingData;
 		String[] newWorkingData = {"12345", "101", "5555"};
 		handler.setWorkingData(newWorkingData);
@@ -54,21 +54,6 @@ public class CSVHandlerTest{
 		assertEquals("99000", colData[0]);
 		assertEquals("ID", rowData[0]);
 		assertEquals("[Spring, 2013, 11]", workingData[0]);
-	}
-	@Test
-	public void testAssembleInfoBasedOnID() throws IOException{
-		List info = new ArrayList();
-		String fullInfo = "";
-		String[] colData;
-		CSVHandler handler = new CSVHandler("src/test/resources/students.csv");
-		handler.readCSVFromFile();
-		colData = handler.getColData();
-		info = handler.getInfoBasedOnID("1111[28");
-		for(int i = 0; i < info.size(); i++){
-			fullInfo = fullInfo + info.get(i);
-		}
-
-		assertEquals("111128 Maritza Abbott mabbott ", fullInfo);
 	}
 }
 

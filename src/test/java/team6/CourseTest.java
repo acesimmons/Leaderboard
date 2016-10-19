@@ -11,43 +11,12 @@ public class CourseTest{
     }
 	
 	@Test
-	public void testSetGetId(){
+	public void testGetDataBasedOnID() throws IOException{
 		Course c = new Course();
-		c.setId("99018");
-		String id = c.getId();
-		assertEquals("99018", id);
+		String courseText = c.getCourseBasedOnID("99018");
+		assertEquals("[99018] Spring 2014 (16 students)", courseText);
 	}
 	
-	@Test
-	public void testSetGetSemester() {
-		Course c = new Course();
-		c.setSemester("Spring");
-		assertEquals("Spring", c.getSemester());
-	}
-	
-	@Test
-	public void testSetGetYear() {
-		Course c = new Course();
-		c.setYear("2014");
-		assertEquals("2014", c.getYear());
-	}
-	
-	@Test
-	public void testSetGetClassSize() {
-		Course c = new Course();
-		c.setClassSize("16");
-		assertEquals("16", c.getClassSize());
-	}
-	
-	@Test
-	public void testToString() {
-		Course c = new Course();
-		c.setId("99018");
-		c.setSemester("Spring");
-		c.setYear("2014");
-		c.setClassSize("16");
-		assertEquals("[99018] Spring 2014 (16 students)", c.toString());
-	}
 }
 
 

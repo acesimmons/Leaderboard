@@ -16,12 +16,16 @@ public class CSVHandler {
 	private String filePath;
 
 	
+	public CSVHandler() {
+		
+	}
 	
-	CSVHandler(String filePath){
+	public CSVHandler(String filePath) throws IOException{
 		workingData = new String[350];
 		rowData = new String[350];
 		colData = new String[350];
 		this.filePath= filePath;
+		readCSVFromFile();
 		
 
 	}
@@ -62,12 +66,7 @@ public class CSVHandler {
 		workingData[lineNum] = Arrays.toString(lineOfCSVData);
 		
 	}
-	public void displayWorkingDataToConsole(){
-		int lineNum = 0;
-		while(workingData[lineNum] != null){
-			lineNum += 1;
-		}
-	}
+	
 	private String[] combinerowAndWorkingData(int lineNum){
 		String strdata;
 		String[] data;
@@ -97,28 +96,5 @@ public class CSVHandler {
 	public void setRowData(String[] newRowData){
 		rowData =  newRowData;
 	}
-	public List<String> getInfoBasedOnID(String id){
-		String text = "";
-		List dataInfo = new ArrayList();
-		int position = getPositionBasedOnID(id);
-		dataInfo.add(colData[position]);
-		String w = workingData[position];
-		
-		String[] workingInfo = w.split(",");
-		for(int i = 0; i < workingInfo.length; i++){
-			dataInfo.add(workingInfo[i]);
-		}
-		return dataInfo;
-	}
-	private int getPositionBasedOnID(String id){
-		int positionData = 0;
-		String w = "";
-		for(int i = 0;i < colData.length;i++){
-			w = colData[i];
-			if(colData[i] == id){
-				positionData = i;
-			}
-		}
-		return positionData;
-	}
+	
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.StudentBuilderTest" tests="2" skipped="0" failures="1" errors="0" timestamp="2016-10-13T23:46:49" hostname="MSI" time="0.001">
+<testsuite name="team6.StudentBuilderTest" tests="2" skipped="0" failures="1" errors="0" timestamp="2016-10-18T22:07:47" hostname="MSI" time="0.002">
   <properties/>
-  <testcase name="formatInformation" classname="team6.StudentBuilderTest" time="0.001">
+  <testcase name="formatInformation" classname="team6.StudentBuilderTest" time="0.002">
     <failure message="org.junit.ComparisonFailure: expected:&lt;[[111128] Maritza Abbott mabbott@jsu.edu]&gt; but was:&lt;[]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[[111128] Maritza Abbott mabbott@jsu.edu]&gt; but was:&lt;[]&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)

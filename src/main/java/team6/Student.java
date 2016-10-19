@@ -1,48 +1,50 @@
 package team6;
-
+import java.io.IOException;
 
 public class Student {
-	private String id;
-	private String firstName;
-	private String email;
-	private String lastName;
-	public Student(){
-		id = "";
-		firstName = "";
-		email = "";
-		lastName = "";
+	private CSVHandler handler;
+	private String[] colData;
+	private String[] workingData;
+	
+	public Student() throws IOException{
+		handler = new CSVHandler("src/test/resources/students.csv");
+	}
+	public String getStudentBasedOnID(String id) {
+		collectInformation();
+		int position = searchThroughIDS(id);
+		String[] studentData = analyzeWorkingData(position);
+		String student = toString(colData[position], studentData[0], studentData[1], studentData[2]);
+		System.out.println(student);
+		return student;
+	}
+	private String[] analyzeWorkingData(int position){
+		String workingPiece = workingData[position];
+		workingPiece = workingPiece.replace("[", "");
+		workingPiece = workingPiece.replace("]", "");
+		String[] studentData = workingPiece.split(", ");
+		return studentData;
+	}
+	private int searchThroughIDS(String id){
+		int position = 0;
+		for(int i = 0; i < 350; i++){
+			if(colData[i] != null){
+				if(colData[i].equals(id)){
+					position += i;
+				}
+			}
+		}
+		return position;
+	}
+	private void collectInformation() {
+		colData = handler.getColData();
+		workingData = handler.getWorkingData();
 	}
 	
-	public String getId() {
-		
-		return id;
-	}
-	
-	public void setId(String id) {
-		this.id = id;
-	}
-	public void setFirstName(String firstName){
-		this.firstName = firstName;
-	}
-	public void setLastName(String lastName){
-		this.lastName = lastName;
-	}
-	public void setEmail(String email){
-		this.email = email;
-	}
-	public String getEmail(){
-		return email;
-	}
-	public String getFirstName(){
-		return firstName;
-	}
-	public String getLastName(){
-		return lastName;
-	}
-	public String toString(){
+	private String toString(String id, String firstName, String lastName, String email){
 		String info = "";
 		info = "[" + id + "] " + firstName + " " + lastName + " " + email + "@jsu.edu";
 		return info;
 	}
+
 
 }
