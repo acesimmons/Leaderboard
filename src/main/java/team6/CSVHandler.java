@@ -15,11 +15,6 @@ public class CSVHandler {
 	private String[] colData;
 	private String filePath;
 
-	
-	public CSVHandler() {
-		
-	}
-	
 	public CSVHandler(String filePath) throws IOException{
 		workingData = new String[350];
 		rowData = new String[350];
@@ -30,7 +25,7 @@ public class CSVHandler {
 
 	}
 
-	public String readCSVFromFile() throws IOException{
+	private String readCSVFromFile() throws IOException{
 		String[] currentLine;
 		int lineNum = 0;
 		
@@ -86,15 +81,6 @@ public class CSVHandler {
 	}
 	public String[] getColData(){
 		return colData;
-	}
-	public void setWorkingData(String[] newWorkingData){
-		workingData =  newWorkingData;
-	}
-	public void setColData(String[] newColData){
-		colData =  newColData;
-	}
-	public void setRowData(String[] newRowData){
-		rowData =  newRowData;
 	}
 	
 }
