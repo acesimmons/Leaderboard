@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.CSVProcessorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-10-19T19:33:00" hostname="MSI" time="0.003">
+<testsuite name="team6.CSVProcessorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-10-20T22:57:00" hostname="Nicholas-PC" time="0.005">
   <properties/>
-  <testcase name="testReadFromCSV" classname="team6.CSVProcessorTest" time="0.001"/>
+  <testcase name="testReadFromCSV" classname="team6.CSVProcessorTest" time="0.002"/>
   <testcase name="testCheckColData" classname="team6.CSVProcessorTest" time="0.001"/>
-  <testcase name="testCheckWorkingData" classname="team6.CSVProcessorTest" time="0.001"/>
+  <testcase name="testCheckWorkingData" classname="team6.CSVProcessorTest" time="0.002"/>
   <system-out><![CDATA[99000
 99000
 [Spring, 2013, 11]
