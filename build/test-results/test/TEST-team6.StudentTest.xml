@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.StudentTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-20T22:57:00" hostname="Nicholas-PC" time="0.004">
+<testsuite name="team6.StudentTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-20T23:18:08" hostname="Nicholas-PC" time="0.004">
   <properties/>
   <testcase name="testGetDataBasedOnID" classname="team6.StudentTest" time="0.004"/>
   <system-out><![CDATA[[111128] Maritza Abbott mabbott@jsu.edu

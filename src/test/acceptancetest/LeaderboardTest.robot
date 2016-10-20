@@ -1,5 +1,5 @@
  | *Setting* | *Value*                   |
-    | Library   | keywords.Leaderboard |
+    | Library   | keywords.LeaderboardKeyword |
     
     | *Variable*         | *Value*                                 |
     | ${f01stu_expected} | [111128] Maritza Abbott mabbott@jsu.edu |

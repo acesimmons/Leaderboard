@@ -3,12 +3,12 @@ import team6.*;
 import java.io.IOException;
 
 
-public class Leaderboard{
+public class LeaderboardKeyword{
 	private Student student;
 	private Course course;
 	
 	
-	public Leaderboard() throws IOException{
+	public LeaderboardKeyword() throws IOException{
 		student = new Student();
 		course = new Course();
 		

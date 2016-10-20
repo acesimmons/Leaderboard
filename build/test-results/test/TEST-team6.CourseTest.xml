@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.CourseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-20T22:56:59" hostname="Nicholas-PC" time="0.031">
+<testsuite name="team6.CourseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-10-20T23:18:08" hostname="Nicholas-PC" time="0.017">
   <properties/>
-  <testcase name="testGetDataBasedOnID" classname="team6.CourseTest" time="0.031"/>
+  <testcase name="testGetDataBasedOnID" classname="team6.CourseTest" time="0.017"/>
   <system-out><![CDATA[[99018] Spring 2014 (16 students)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

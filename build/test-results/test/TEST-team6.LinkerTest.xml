@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.LinkerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-10-20T22:57:00" hostname="Nicholas-PC" time="0.018">
+<testsuite name="team6.LinkerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-10-20T23:18:08" hostname="Nicholas-PC" time="0.016">
   <properties/>
-  <testcase name="testGetInfoBasedOnCourse" classname="team6.LinkerTest" time="0.009"/>
-  <testcase name="testGetInfoBasedOnStudent" classname="team6.LinkerTest" time="0.004"/>
-  <testcase name="testGetInfoBasedOnInvalidInput" classname="team6.LinkerTest" time="0.003"/>
+  <testcase name="testGetInfoBasedOnCourse" classname="team6.LinkerTest" time="0.005"/>
+  <testcase name="testGetInfoBasedOnStudent" classname="team6.LinkerTest" time="0.006"/>
+  <testcase name="testGetInfoBasedOnInvalidInput" classname="team6.LinkerTest" time="0.004"/>
   <system-out><![CDATA[[99018] Spring 2014 (16 students)
 [99018] Spring 2014 (16 students)
 [111128] Maritza Abbott mabbott@jsu.edu
