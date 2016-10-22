@@ -1,0 +1,31 @@
+==============================================================================
+20161022 18:54:14.251 - INFO - + START SUITE: Acceptancetest [ ]
+==============================================================================
+20161022 18:54:14.291 - INFO - +- START SUITE: Acceptancetest.GameologyTest [ ]
+==============================================================================
+20161022 18:54:14.295 - INFO - +-- START TEST: Get Student From Database [ ]
+------------------------------------------------------------------------------
+20161022 18:54:14.300 - INFO - +--- START KW: keywords.GameologyKeyword.Pull Student From Database Based On ID [ 111128 ]
+20161022 18:54:14.314 - INFO - ${result} = [111128] Maritza Abbott mabbott@jsu.edu
+20161022 18:54:14.317 - INFO - +--- END KW: keywords.GameologyKeyword.Pull Student From Database Based On ID (16)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20161022 18:54:14.318 - INFO - +--- START KW: BuiltIn.Should Be Equal [ ${f01stu_expected} | ${result} ]
+20161022 18:54:14.324 - INFO - +--- END KW: BuiltIn.Should Be Equal (5)
+------------------------------------------------------------------------------
+20161022 18:54:14.327 - INFO - +-- END TEST: Get Student From Database (31)
+------------------------------------------------------------------------------
+20161022 18:54:14.328 - INFO - +-- START TEST: Get Course From Database [ ]
+------------------------------------------------------------------------------
+20161022 18:54:14.331 - INFO - +--- START KW: keywords.GameologyKeyword.Pull Course From Database Based On ID [ 99018 ]
+20161022 18:54:14.335 - INFO - ${result} = [99018] Spring 2014 (16 students)
+20161022 18:54:14.336 - INFO - +--- END KW: keywords.GameologyKeyword.Pull Course From Database Based On ID (5)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+20161022 18:54:14.337 - INFO - +--- START KW: BuiltIn.Should Be Equal [ ${f01crs_expected} | ${result} ]
+20161022 18:54:14.344 - INFO - +--- END KW: BuiltIn.Should Be Equal (6)
+------------------------------------------------------------------------------
+20161022 18:54:14.348 - INFO - +-- END TEST: Get Course From Database (17)
+------------------------------------------------------------------------------
+20161022 18:54:14.354 - INFO - +- END SUITE: Acceptancetest.GameologyTest (94)
+==============================================================================
+20161022 18:54:14.361 - INFO - + END SUITE: Acceptancetest (342)
+==============================================================================

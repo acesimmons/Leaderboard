@@ -103,14 +103,4 @@ public class GameologyDatabase {
 		Course course = new Course(courseData);
 		courses.add(course);
 	}
-	
-	/**
-	public Student getStudent(String id) {
-		
-	}
-	
-	public List<Student> getStudents() {
-		
-	}
-	*/
 }

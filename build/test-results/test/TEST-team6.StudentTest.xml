@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.StudentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-10-22T21:08:19" hostname="MSI" time="0.0">
+<testsuite name="team6.StudentTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2016-10-22T23:54:04" hostname="MSI" time="0.0">
   <properties/>
   <testcase name="StudentReturnsIDTest" classname="team6.StudentTest" time="0.0"/>
   <testcase name="StudentReturnsStudentInfoTest" classname="team6.StudentTest" time="0.0"/>
