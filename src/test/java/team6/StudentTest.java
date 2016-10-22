@@ -11,10 +11,21 @@ public class StudentTest{
 		
     }
 	@Test
-	public void testGetDataBasedOnID() throws IOException{
-		Student s = new Student();
-		String studentText = s.getStudentBasedOnID("111128");
-		assertEquals("[111128] Maritza Abbott mabbott@jsu.edu", studentText);
+	public void StudentReturnsStudentInfoTest(){
+		String[] studentvalues = {"912", "Tyler", "Brown", "tbrown14"};
+		Student student = new Student(studentvalues);
+		
+		String output = student.getStudentInfo();
+		assertEquals("[912] Tyler Brown tbrown14@jsu.edu", output);
+	}
+	
+	@Test
+	public void StudentReturnsIDTest(){
+		String[] studentvalues = {"912", "Tyler", "Brown", "tbrown14"};
+		Student student = new Student(studentvalues);
+		
+		String outputID = student.getID();
+		assertEquals("912", outputID);
 	}
 	
 }

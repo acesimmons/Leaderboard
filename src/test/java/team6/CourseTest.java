@@ -11,12 +11,22 @@ public class CourseTest{
     }
 	
 	@Test
-	public void testGetDataBasedOnID() throws IOException{
-		Course c = new Course();
-		String courseText = c.getCourseBasedOnID("99018");
-		assertEquals("[99018] Spring 2014 (16 students)", courseText);
+	public void courseReturnsCourseInfoTest(){
+		String[] courseValues = {"22222", "Spring", "2002", "6"};
+		Course course = new Course(courseValues);
+		
+		String output = course.getCourseInfo();
+		assertEquals("[22222] Spring 2002 (6 students)", output);
 	}
 	
+	@Test
+	public void courseReturnsIDTest(){
+		String[] courseValues = {"22222", "Spring", "2002", "6"};
+		Course course = new Course(courseValues);
+		
+		String outputID = course.getID();
+		assertEquals("22222", outputID);
+	}
 }
 
 
