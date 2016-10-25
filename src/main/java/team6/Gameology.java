@@ -9,10 +9,10 @@ public class Gameology {
 		
 		if(args.length == 2) {
 			if(args[0].equals("student")) {
-				output = database.searchDatabaseBasedOnStudentID(args[1]);
+				output = database.getStudent(args[1]).toString();
 			}
 			else if(args[0].equals("course")) {
-				output = database.searchDatabaseBasedOnStudentID(args[1]);
+				output = database.getCourse(args[1]).toString();
 			}
 		}
 		System.out.println(output);

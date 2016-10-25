@@ -11,16 +11,14 @@ public class StudentTest{
 		
     }
 	@Test
-	public void StudentReturnsStudentInfoTest(){
+	public void studentReturnsStudentInfoTest(){
 		String[] studentvalues = {"912", "Tyler", "Brown", "tbrown14"};
 		Student student = new Student(studentvalues);
-		
-		String output = student.getStudentInfo();
-		assertEquals("[912] Tyler Brown tbrown14@jsu.edu", output);
+		assertEquals("[912] Tyler Brown tbrown14@jsu.edu", student.toString());
 	}
 	
 	@Test
-	public void StudentReturnsIDTest(){
+	public void studentReturnsIDTest(){
 		String[] studentvalues = {"912", "Tyler", "Brown", "tbrown14"};
 		Student student = new Student(studentvalues);
 		

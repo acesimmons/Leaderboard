@@ -4,20 +4,24 @@ import java.io.IOException;
 
 
 public class GameologyKeyword{
+	private GameologyDatabase database;
+	private String output;
 	public GameologyKeyword(){
-		
+		database = new GameologyDatabase();
+		output = "";
 	}
 		
-	public String pullCourseFromDatabaseBasedOnID(String id){
-		GameologyDatabase database = new GameologyDatabase();
-		String courseInfo = database.searchDatabaseBasedOnCourseID(id);
+	public String startGamegogyCLIWithArguments(String id){
+		
+	}
+	
+	public String getCommandLineOutput{
+		String courseInfo = database.getCourse(id).toString();
 		return courseInfo;
 	}
 		
-	public String pullStudentFromDatabaseBasedOnID(String id){
-		GameologyDatabase database = new GameologyDatabase();
-		String studentInfo = database.searchDatabaseBasedOnStudentID(id);
-		return studentInfo;
+	public String startGamegogyCLIWithArguments(){
+		output = "";
 	}
 
 }

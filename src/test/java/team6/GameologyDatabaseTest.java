@@ -12,28 +12,26 @@ public class GameologyDatabaseTest{
     }
 
 	@Test
-	public void GetStudentInfoTest() {
+	public void getStudentInfoTest() {
 		GameologyDatabase database = new GameologyDatabase();
-		String output = database.searchDatabaseBasedOnStudentID("111128");
+		Student s = database.getStudent("111128");
 		
-		assertEquals("[111128] Maritza Abbott mabbott@jsu.edu", output);
+		assertEquals("[111128] Maritza Abbott mabbott@jsu.edu", s.toString());
+	}
+	
+	@Test(expected=RuntimeException.class)
+	public void databaseDoesNothingWhenGivenBadCourseIDTest() {
+		GameologyDatabase database = new GameologyDatabase();
+		Course c = database.getCourse("99018121");
 	}
 	
 	@Test
-	public void DatabaseDoesNothingWhenGivenBadCourseIDTest() {
+	public void getCourseInfoTest() {
 		GameologyDatabase database = new GameologyDatabase();
-		String output = database.searchDatabaseBasedOnCourseID("99018121");
-		
-		assertEquals("", output);
-	}
-	
-	@Test
-	public void GetCourseInfoTest() {
-		GameologyDatabase database = new GameologyDatabase();
-		String output = database.searchDatabaseBasedOnCourseID("99018");
+		Course c = database.getCourse("99018");
 		
 		
-		assertEquals("[99018] Spring 2014 (16 students)", output);
+		assertEquals("[99018] Spring 2014 (16 students)", c.toString());
 	}
 }
 

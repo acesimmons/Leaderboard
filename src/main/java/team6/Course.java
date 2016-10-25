@@ -13,7 +13,8 @@ public class Course {
 		classSize = (courseData[3]);
 	}
 	
-	public String getCourseInfo(){
+	@Override
+	public String toString(){
 		String courseInfo = "";
 		courseInfo = "[" + id + "] " + semester + " " + year + " (" + classSize + " students)";
 		return courseInfo;

@@ -15,8 +15,7 @@ public class CourseTest{
 		String[] courseValues = {"22222", "Spring", "2002", "6"};
 		Course course = new Course(courseValues);
 		
-		String output = course.getCourseInfo();
-		assertEquals("[22222] Spring 2002 (6 students)", output);
+		assertEquals("[22222] Spring 2002 (6 students)", course.toString());
 	}
 	
 	@Test

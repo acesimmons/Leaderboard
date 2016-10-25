@@ -14,7 +14,8 @@ public class Student {
 		email = (studentData[3]);
 	}
 	
-	public String getStudentInfo(){
+	@Override
+	public String toString(){
 		String studentInfo = "";
 		studentInfo = "[" + id + "] " + firstName + " " + lastName + " " + email + "@jsu.edu";
 		

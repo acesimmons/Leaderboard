@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0 (Jython 2.7.0 on java1.8.0_65)" generated="20161022 18:54:14.000">
+<robot generator="Robot 3.0 (Jython 2.7.0 on java1.8.0_65)" generated="20161024 11:09:43.828">
 <suite source="C:\Users\Tyler\Leaderboard\src\test\acceptancetest" name="Acceptancetest" id="s1">
 <suite source="C:\Users\Tyler\Leaderboard\src\test\acceptancetest\GameologyTest.robot" name="GameologyTest" id="s1-s1">
 <test name="Get Student From Database" id="s1-s1-t1">
@@ -10,8 +10,8 @@
 <assign>
 <var>${result}</var>
 </assign>
-<msg level="INFO" timestamp="20161022 18:54:14.314">${result} = [111128] Maritza Abbott mabbott@jsu.edu</msg>
-<status endtime="20161022 18:54:14.316" starttime="20161022 18:54:14.300" status="PASS"></status>
+<msg level="INFO" timestamp="20161024 11:09:44.089">${result} = [111128] Maritza Abbott mabbott@jsu.edu</msg>
+<status endtime="20161024 11:09:44.090" starttime="20161024 11:09:44.074" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -19,9 +19,9 @@
 <arg>${f01stu_expected}</arg>
 <arg>${result}</arg>
 </arguments>
-<status endtime="20161022 18:54:14.323" starttime="20161022 18:54:14.318" status="PASS"></status>
+<status endtime="20161024 11:09:44.096" starttime="20161024 11:09:44.092" status="PASS"></status>
 </kw>
-<status critical="yes" endtime="20161022 18:54:14.325" starttime="20161022 18:54:14.294" status="PASS"></status>
+<status critical="yes" endtime="20161024 11:09:44.097" starttime="20161024 11:09:44.069" status="PASS"></status>
 </test>
 <test name="Get Course From Database" id="s1-s1-t2">
 <kw library="keywords.GameologyKeyword" name="Pull Course From Database Based On ID">
@@ -31,8 +31,8 @@
 <assign>
 <var>${result}</var>
 </assign>
-<msg level="INFO" timestamp="20161022 18:54:14.335">${result} = [99018] Spring 2014 (16 students)</msg>
-<status endtime="20161022 18:54:14.336" starttime="20161022 18:54:14.331" status="PASS"></status>
+<msg level="INFO" timestamp="20161024 11:09:44.108">${result} = [99018] Spring 2014 (16 students)</msg>
+<status endtime="20161024 11:09:44.109" starttime="20161024 11:09:44.103" status="PASS"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -40,13 +40,13 @@
 <arg>${f01crs_expected}</arg>
 <arg>${result}</arg>
 </arguments>
-<status endtime="20161022 18:54:14.343" starttime="20161022 18:54:14.337" status="PASS"></status>
+<status endtime="20161024 11:09:44.115" starttime="20161024 11:09:44.111" status="PASS"></status>
 </kw>
-<status critical="yes" endtime="20161022 18:54:14.345" starttime="20161022 18:54:14.328" status="PASS"></status>
+<status critical="yes" endtime="20161024 11:09:44.117" starttime="20161024 11:09:44.100" status="PASS"></status>
 </test>
-<status endtime="20161022 18:54:14.349" starttime="20161022 18:54:14.255" status="PASS"></status>
+<status endtime="20161024 11:09:44.121" starttime="20161024 11:09:44.032" status="PASS"></status>
 </suite>
-<status endtime="20161022 18:54:14.357" starttime="20161022 18:54:14.015" status="PASS"></status>
+<status endtime="20161024 11:09:44.128" starttime="20161024 11:09:43.839" status="PASS"></status>
 </suite>
 <statistics>
 <total>

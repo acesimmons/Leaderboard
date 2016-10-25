@@ -18,32 +18,18 @@ public class GameologyDatabase {
 		readCourses();
 	}
 	
-	public String searchDatabaseBasedOnStudentID(String id){
-		Student student;
-		String studentInfo = "";
-		
+	public Student getStudent(String id){
 		for(int i = 0; i < students.size(); i++){
-			student = students.get(i);
-			String studentOutputID = student.getID();
-			if(studentOutputID.equals(id)){
-				studentInfo = student.getStudentInfo();
-			}
+			if(students.get(i).getID().equals(id)) return students.get(i);
 		}
-		return studentInfo;
+		throw new RuntimeException();
 	}
 	
-	public String searchDatabaseBasedOnCourseID(String id){
-		Course course;
-		String courseInfo = "";
-		
+	public Course getCourse(String id){
 		for(int i = 0; i < courses.size(); i++){
-			course = courses.get(i);
-			String courseOutputID = course.getID();
-			if(courseOutputID.equals(id)){
-				courseInfo = course.getCourseInfo();
-			}
+			if(courses.get(i).getID().equals(id)) return courses.get(i);
 		}
-		return courseInfo;
+		throw new RuntimeException();
 	}
 
 	private void readInStudents() {
@@ -87,7 +73,7 @@ public class GameologyDatabase {
 		
 		while(currentLine != null){
 			
-			placeStudentIntoToCourses(currentLine);
+			placeCourseIntoToCourses(currentLine);
 			currentLine = readIt.readNext();
 		}
 		
@@ -98,7 +84,7 @@ public class GameologyDatabase {
 		}
 	}
 	
-	private void placeStudentIntoToCourses(String[] courseData){
+	private void placeCourseIntoToCourses(String[] courseData){
 		
 		Course course = new Course(courseData);
 		courses.add(course);
