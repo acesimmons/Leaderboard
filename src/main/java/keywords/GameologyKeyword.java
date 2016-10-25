@@ -4,24 +4,26 @@ import java.io.IOException;
 
 
 public class GameologyKeyword{
-	private GameologyDatabase database;
 	private String output;
-	public GameologyKeyword(){
-		database = new GameologyDatabase();
+	
+	public void startGamegogyCLIWithArguments(){
 		output = "";
-	}
-		
-	public String startGamegogyCLIWithArguments(String id){
-		
 	}
 	
-	public String getCommandLineOutput{
-		String courseInfo = database.getCourse(id).toString();
-		return courseInfo;
+	public String getCommandLineOutput(String type, String id){
+	GameologyDatabase database = new GameologyDatabase(type, id);
+	if(type.equals("student")){
+		output = database.getStudent(id).toString();
 	}
-		
-	public String startGamegogyCLIWithArguments(){
-		output = "";
+	if(type.equals("course")){
+		output = database.getCourse(id).toString();
 	}
+	
+	}
+	
+		public String getCommandLineOutput(){
+			return output;
+		}
+	
 
 }
