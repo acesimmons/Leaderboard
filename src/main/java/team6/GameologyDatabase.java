@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class GameologyDatabase {
 	private List<Student> students;
 	private List<Course> courses;
-	
+	private MissingEntryException missingEntry;
 	
 	public GameologyDatabase() {
 		students = new ArrayList<>();
@@ -22,7 +22,7 @@ public class GameologyDatabase {
 		for(int i = 0; i < students.size(); i++){
 			if(students.get(i).getID().equals(id)) return students.get(i);
 		}
-		throw new RuntimeException();
+		throw new MissingEntryException("Wrong ID");
 	}
 	
 	public Course getCourse(String id){
