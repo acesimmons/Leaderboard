@@ -5,12 +5,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 
-public class GameologyDatabase {
+public class GamegogyDatabase {
 	private List<Student> students;
 	private List<Course> courses;
 	private MissingEntryException missingEntry;
 	
-	public GameologyDatabase() {
+	public GamegogyDatabase() {
 		students = new ArrayList<>();
 		courses = new ArrayList<>();
 		

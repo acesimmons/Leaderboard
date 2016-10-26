@@ -1,10 +1,10 @@
 package team6;
 import java.io.IOException;
 
-public class Gameology {
+public class Gamegogy {
 	
 	public static void main(String[] args) {
-		GameologyDatabase database = new GameologyDatabase();
+		GamegogyDatabase database = new GamegogyDatabase();
 		String output = "";
 		
 		if(args.length == 2) {
