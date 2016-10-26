@@ -15,3 +15,7 @@ Test Gamegogy Load Course Data
 	 Start Gamegogy CLI With Arguments  course  99018
 	 ${output}=  Get Command Line Output
 	 Should Be Equal  ${f01crs_expected}  ${output}
+Test Gamegogy With No Arguments   
+	 Start Gamegogy CLI With Arguments  
+     ${output}=  Get Command Line Output
+     Should Be Equal  ${output}  ${EMPTY}
