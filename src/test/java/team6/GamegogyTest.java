@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 import java.io.*;
 import java.util.*;
-public class GameologyTest{
+public class GamegogyTest{
 	@Before
     public void setUp() {
 		

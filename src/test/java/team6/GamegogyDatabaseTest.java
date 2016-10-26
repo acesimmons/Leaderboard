@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import java.io.*;
 import java.util.*;
 
-public class GameologyDatabaseTest{
+public class GamegogyDatabaseTest{
 	@Before
     public void setUp() {
 		
@@ -13,7 +13,7 @@ public class GameologyDatabaseTest{
 
 	@Test
 	public void getStudentInfoTest() {
-		GameologyDatabase database = new GameologyDatabase();
+		GamegogyDatabase database = new GamegogyDatabase();
 		Student s = database.getStudent("111128");
 		
 		assertEquals("[111128] Maritza Abbott mabbott@jsu.edu", s.toString());
@@ -21,13 +21,13 @@ public class GameologyDatabaseTest{
 	
 	@Test(expected=RuntimeException.class)
 	public void databaseDoesNothingWhenGivenBadCourseIDTest() {
-		GameologyDatabase database = new GameologyDatabase();
+		GamegogyDatabase database = new GamegogyDatabase();
 		Course c = database.getCourse("99018121");
 	}
 	
 	@Test
 	public void getCourseInfoTest() {
-		GameologyDatabase database = new GameologyDatabase();
+		GamegogyDatabase database = new GamegogyDatabase();
 		Course c = database.getCourse("99018");
 		
 		
