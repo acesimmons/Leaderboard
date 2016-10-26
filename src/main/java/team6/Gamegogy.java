@@ -18,4 +18,3 @@ public class Gamegogy {
 		System.out.println(output);
 	}
 }
-		

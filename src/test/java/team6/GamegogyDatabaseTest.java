@@ -19,7 +19,7 @@ public class GamegogyDatabaseTest{
 		assertEquals("[111128] Maritza Abbott mabbott@jsu.edu", s.toString());
 	}
 	
-	@Test(expected=RuntimeException.class)
+	@Test(expected=MissingEntryException.class)
 	public void databaseDoesNothingWhenGivenBadCourseIDTest() {
 		GamegogyDatabase database = new GamegogyDatabase();
 		Course c = database.getCourse("99018121");
