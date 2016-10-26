@@ -34,7 +34,3 @@ public class GamegogyDatabaseTest{
 		assertEquals("[99018] Spring 2014 (16 students)", c.toString());
 	}
 }
-
-
-
-
