@@ -22,14 +22,14 @@ public class GameologyDatabase {
 		for(int i = 0; i < students.size(); i++){
 			if(students.get(i).getID().equals(id)) return students.get(i);
 		}
-		throw new MissingEntryException("Wrong ID");
+		throw new MissingEntryException("Could not find Student ID of "+ id);
 	}
 	
 	public Course getCourse(String id){
 		for(int i = 0; i < courses.size(); i++){
 			if(courses.get(i).getID().equals(id)) return courses.get(i);
 		}
-		throw new RuntimeException();
+		throw new MissingEntryException("Could not find Student ID of "+ id);
 	}
 
 	private void readInStudents() {
