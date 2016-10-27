@@ -28,7 +28,7 @@ public class GamegogyDatabaseTest{
 	@Test(expected=MissingEntryException.class)
 	public void databaseDoesNothingWhenGivenBadStudentIDTest() {
 		GamegogyDatabase database = new GamegogyDatabase();
-		Course c = database.getStudent("87640987654");
+		Student s = database.getStudent("87640987654");
 	}
 	
 	@Test
