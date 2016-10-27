@@ -17,7 +17,7 @@ jar {
     manifest {
         attributes 'Implementation-Title': 'CSV JSON', 
                    'Implementation-Version': version, 
-                   'Main-Class': 'team6.Main'
+                   'Main-Class': 'team6.Gamegogy'
     }
 }
 
