@@ -3,7 +3,7 @@ import team6.*;
 import java.io.IOException;
 
 
-public class GamegogyKeyword{
+public class Feature1Keyword{
 	private String output;
 	
 	

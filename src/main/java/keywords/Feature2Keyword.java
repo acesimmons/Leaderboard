@@ -15,7 +15,7 @@ public class Feature2Keyword{
 			output = database.getStudentIDs();
 		}
 		if(type.equals("courseids")){
-			output = database.getCourseIds();
+			output = database.getCourseIDs();
 		}
 	}
 		

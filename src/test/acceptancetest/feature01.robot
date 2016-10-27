@@ -1,5 +1,5 @@
  *** Settings ***
-Library  keywords.GamegogyKeyword
+Library  keywords.Feature1Keyword
 
 ***Variable***
 ${f01stu_expected}  [111128] Maritza Abbott mabbott@jsu.edu
