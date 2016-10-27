@@ -18,6 +18,21 @@ public class GamegogyDatabase {
 		readCourses();
 	}
 	
+	public String getStudentIDs(){
+		String studentIDs = "";
+		for(int i = 0; i < students.size(); i++){
+			studentIDs += students.get(i).getID() + "\n";
+		}
+		return studentIDs;
+	}
+	
+	public String getCourseIDs(){
+		String courseIDs = "";
+		for(int i = 0; i < courses.size(); i++){
+			courseIDs += courses.get(i).getID() + "\n";
+		}
+		return courseIDs;
+	}
 	public Student getStudent(String id){
 		for(int i = 0; i < students.size(); i++){
 			if(students.get(i).getID().equals(id)) return students.get(i);
