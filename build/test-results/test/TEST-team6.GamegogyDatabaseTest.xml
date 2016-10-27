@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="team6.GamegogyDatabaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-10-26T17:01:09" hostname="MSI" time="0.018">
-  <properties/>
-  <testcase name="getStudentInfoTest" classname="team6.GamegogyDatabaseTest" time="0.011"/>
-  <testcase name="getCourseInfoTest" classname="team6.GamegogyDatabaseTest" time="0.004"/>
-  <testcase name="databaseDoesNothingWhenGivenBadCourseIDTest" classname="team6.GamegogyDatabaseTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
