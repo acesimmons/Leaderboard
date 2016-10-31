@@ -44,7 +44,7 @@ public class GamegogyDatabase {
 		for(int i = 0; i < courses.size(); i++){
 			if(courses.get(i).getID().equals(id)) return courses.get(i);
 		}
-		throw new MissingEntryException("Could not find Student ID of "+ id);
+		throw new MissingEntryException("Could not find Course ID of "+ id);
 	}
 
 	private void readInStudents() {
