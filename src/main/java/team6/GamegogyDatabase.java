@@ -14,8 +14,8 @@ public class GamegogyDatabase {
 		students = new ArrayList<>();
 		courses = new ArrayList<>();
 		
-		readInStudents();
-		readCourses();
+		readStudentsFile();
+		readCoursesFile();
 	}
 	
 	public String getStudentIDs(){
@@ -33,73 +33,73 @@ public class GamegogyDatabase {
 		}
 		return courseIDs;
 	}
-	public Student getStudent(String id){
+	public Student getStudentData(String id){
 		for(int i = 0; i < students.size(); i++){
 			if(students.get(i).getID().equals(id)) return students.get(i);
 		}
 		throw new MissingEntryException("Could not find Student ID of "+ id);
 	}
 	
-	public Course getCourse(String id){
+	public Course getCourseData(String id){
 		for(int i = 0; i < courses.size(); i++){
 			if(courses.get(i).getID().equals(id)) return courses.get(i);
 		}
 		throw new MissingEntryException("Could not find Course ID of "+ id);
 	}
 
-	private void readInStudents() {
+	private void readStudentsFile() {
 		String fileName = "src/test/resources/students.csv";
 		String[] currentLine;
 		
 		try{
-		CSVReader readIt = new CSVReader(new FileReader(fileName));
+		CSVReader readFile = new CSVReader(new FileReader(fileName));
 		
-		readIt.readNext();
-		currentLine = readIt.readNext();
+		readFile.readNext();
+		currentLine = readFile.readNext();
 		
 		while(currentLine != null){
 			
-			placeStudentIntoToStudents(currentLine);
-			currentLine = readIt.readNext();
+			placeStudentInStudentsList(currentLine);
+			currentLine = readFile.readNext();
 		}
 		
-		readIt.close();
+		readFile.close();
 		}
 		catch(IOException e){
-			System.out.println("The file has gone missing. Time to file a police report.");
+			System.out.println("The Students file has gone missing.");
 		}
 	}
 	
-	private void placeStudentIntoToStudents(String[] studentData){
+	private void placeStudentInStudentsList(String[] studentData){
 		
 		Student student = new Student(studentData);
 		students.add(student);
 	}
 	
-	private void readCourses() {
+	private void readCoursesFile() {
 		String fileName = "src/test/resources/courses.csv";
 		String[] currentLine;
 		
 		try{
-		CSVReader readIt = new CSVReader(new FileReader(fileName));
+		CSVReader readFile = new CSVReader(new FileReader(fileName));
 		
-		readIt.readNext();
-		currentLine = readIt.readNext();
+		readFile.readNext();
+		currentLine = readFile.readNext();
 		
 		while(currentLine != null){
 			
-			placeCourseIntoToCourses(currentLine);
-			currentLine = readIt.readNext();
+			placeCourseInCoursesList(currentLine);
+			currentLine = readFile.readNext();
 		}
 		
-		readIt.close();
+		readFile.close();
 		}
 		catch(IOException e){
-			System.out.println("The file has gone missing. Time to let the hounds out.");
+			System.out.println("The Courses file has gone missing.");
 		}
 	}
 	
-	private void placeCourseIntoToCourses(String[] courseData){
+	private void placeCourseInCoursesList(String[] courseData){
 		
 		Course course = new Course(courseData);
 		courses.add(course);
