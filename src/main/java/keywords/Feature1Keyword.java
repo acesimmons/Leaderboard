@@ -14,10 +14,10 @@ public class Feature1Keyword{
 	public void startGamegogyCLIWithArguments(String type, String id){
 		GamegogyDatabase database = new GamegogyDatabase();
 		if(type.equals("student")){
-			output = database.getStudent(id).toString();
+			output = database.getStudentData(id).toString();
 		}
 		if(type.equals("course")){
-			output = database.getCourse(id).toString();
+			output = database.getCourseData(id).toString();
 		}
 		
 

@@ -14,7 +14,7 @@ public class GamegogyDatabaseTest{
 	@Test
 	public void getStudentInfoTest() {
 		GamegogyDatabase database = new GamegogyDatabase();
-		Student s = database.getStudent("111128");
+		Student s = database.getStudentData("111128");
 		
 		assertEquals("[111128] Maritza Abbott mabbott@jsu.edu", s.toString());
 	}
@@ -22,19 +22,19 @@ public class GamegogyDatabaseTest{
 	@Test(expected=MissingEntryException.class)
 	public void databaseDoesNothingWhenGivenBadCourseIDTest() {
 		GamegogyDatabase database = new GamegogyDatabase();
-		Course c = database.getCourse("99018121");
+		Course c = database.getCourseData("99018121");
 	}
 	
 	@Test(expected=MissingEntryException.class)
 	public void databaseDoesNothingWhenGivenBadStudentIDTest() {
 		GamegogyDatabase database = new GamegogyDatabase();
-		Student s = database.getStudent("87640987654");
+		Student s = database.getStudentData("87640987654");
 	}
 	
 	@Test
 	public void getCourseInfoTest() {
 		GamegogyDatabase database = new GamegogyDatabase();
-		Course c = database.getCourse("99018");
+		Course c = database.getCourseData("99018");
 		
 		
 		assertEquals("[99018] Spring 2014 (16 students)", c.toString());
