@@ -17,22 +17,48 @@ public class GamegogyDatabase {
 		readStudentsFile();
 		readCoursesFile();
 	}
-	
-	public String getStudentIDs(){
+	public String getStudentIDs() {
 		String studentIDs = "";
-		for(int i = 0; i < students.size(); i++){
-			studentIDs += students.get(i).getID() + "\n";
+		List<String> studentIDList = getStudentIDsList();
+		
+		for(int i = 0; i < studentIDList.size(); i++){
+			studentIDs += studentIDList.get(i) + "\n"; 
 		}
+		
 		return studentIDs;
+	}
+	
+	private List<String> getStudentIDsList(){
+		List<String> studentIDList = new ArrayList<>();
+		String studentIDs = "";
+		
+		for(int i = 0; i < students.size(); i++){
+			studentIDs = students.get(i).getID();
+			studentIDList.add(studentIDs);
+		}
+		
+		return studentIDList;
+	}
+	
+	private List<String> getCourseIDsList(){
+		String courseIDs = "";
+		List<String> courseIDList = new ArrayList<>();
+		for(int i = 0; i < courses.size(); i++){
+			courseIDs = courses.get(i).getID();
+			courseIDList.add(courseIDs);
+		}
+		return courseIDList;
 	}
 	
 	public String getCourseIDs(){
 		String courseIDs = "";
-		for(int i = 0; i < courses.size(); i++){
-			courseIDs += courses.get(i).getID() + "\n";
+		 List<String> courseIDList = getCourseIDsList();
+		for(int i = 0; i < courseIDList.size(); i++){
+			courseIDs += courseIDList.get(i) + "\n";
 		}
 		return courseIDs;
 	}
+	
 	public Student getStudentData(String id){
 		for(int i = 0; i < students.size(); i++){
 			if(students.get(i).getID().equals(id)) return students.get(i);
