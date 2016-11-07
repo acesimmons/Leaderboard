@@ -1,21 +1,35 @@
 package team6;
 import java.util.*;
 public class Gradebook {
-	private Map<String, String> gradebookMap;
+	private HashMap<String, HashMap> gradebookMap;
 	private String courseID;
 	
 	public void setCourseID(String courseID) {
 		this.courseID = courseID;
 	}
 	
-	public void setGradeInformation(Map gradebookMap) {
+	public void setGradeInformation(HashMap<String, HashMap> gradebookMap) {
 		this.gradebookMap = gradebookMap;
 	}
 	
-	public float getGradeBasedOnStudent(String assessment, String studentID){
+	public String getGradeBasedOnStudent(String id, String assessment){
+		
 		float grade = 0.0f;
-		Map studentsMap = gradebookMap.get(studentID);
-		grade = studentsMap.get(assessment);
-		return grade;
+
+		String g = "";
+		for(String key: gradebookMap.keySet()) {
+			HashMap<String, String> value = gradebookMap.get(key);
+			if(key == id){
+				for(String k: value.keySet()) {
+					if(k == assessment) {
+						g  = value.get(assessment);
+					}
+				}
+			}
+		}
+
+		return g;
+		
+		
 	}
 }
