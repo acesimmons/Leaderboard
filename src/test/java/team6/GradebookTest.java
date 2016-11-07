@@ -11,10 +11,16 @@ public class GradebookTest{
     }
 	@Test
 	public void testGetGradeOfStudent() {
-		Map map = new HashMap();
-		Gradebook gradebook = new Gradebook(map);
+		Map<String, Map> studentMap = new HashMap();
+		Map<String, Float> gradeMap = new HashMap();
+		
+		gradeMap.put("assignment 1", 44.0f);
+		studentMap.put("111391", gradeMap);
+		
+		Gradebook gradebook = new Gradebook();
+		gradebook.setGradeInformation(studentMap);
 		float studentGrade = gradebook.getGradeBasedOnStudent("assignment 1", "111391");
-		assertEquals("44", studentGrade);
+		assertEquals(44.0f, studentGrade);
 	}
 }
 
