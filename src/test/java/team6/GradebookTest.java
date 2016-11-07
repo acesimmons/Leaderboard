@@ -19,6 +19,7 @@ public class GradebookTest{
 		
 		Gradebook gradebook = new Gradebook();
 		gradebook.setGradeInformation(studentMap);
+		
 		float studentGrade = gradebook.getGradeBasedOnStudent("assignment 1", "111391");
 		assertEquals(44.0f, studentGrade);
 	}

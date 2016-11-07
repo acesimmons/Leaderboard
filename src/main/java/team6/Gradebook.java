@@ -14,7 +14,8 @@ public class Gradebook {
 	
 	public float getGradeBasedOnStudent(String assessment, String studentID){
 		float grade = 0.0f;
-		
+		Map studentsMap = gradebookMap.get(studentID);
+		grade = studentsMap.get(assessment);
 		return grade;
 	}
 }
