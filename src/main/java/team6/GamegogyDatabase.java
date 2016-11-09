@@ -24,7 +24,7 @@ public class GamegogyDatabase {
 		String studentIDs = "";
 		List<String> studentIDList = getStudentIDsList();
 		
-		for(int i = 0; i < studentIDList.size(); i++){
+		for(int i = 0; i < studentIDList.size(); ++i){
 			studentIDs += studentIDList.get(i) + "\n"; 
 		}
 		
