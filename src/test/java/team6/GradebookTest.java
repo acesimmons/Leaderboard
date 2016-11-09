@@ -13,7 +13,7 @@ public class GradebookTest{
 	public void testGetGradeOfStudent() {
 		Gradebook gradebook = new Gradebook();
 		HashMap<String, String> assessmentMap = new HashMap<String, String>();
-		HashMap<String, HashMap> gradebookMap = new HashMap<String, HashMap>();
+		HashMap<String, HashMap<String, String>> gradebookMap = new HashMap<String, HashMap<String, String>>();
 		
 		assessmentMap.put("assignments 1", "44.0");
 		gradebookMap.put("111391", assessmentMap);

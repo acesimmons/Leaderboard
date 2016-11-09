@@ -155,10 +155,10 @@ public class GamegogyDatabase {
 				gradeCategories = buildCategoryData(currentLine);
 				HashMap<String, HashMap<String, String>> studentMap = new HashMap<String, HashMap<String, String>>();
 				
+				currentLine = readFile.readNext();
 				while(currentLine != null){
-					
-					currentLine = readFile.readNext();
 					studentMap.put(currentLine[0], (loadAssessmentMap(gradeCategories, currentLine)));
+					currentLine = readFile.readNext();
 				}
 				readFile.close();
 				
@@ -174,7 +174,7 @@ public class GamegogyDatabase {
 	private HashMap<String, String> loadAssessmentMap(List<String> gradeCategories, String[] grade) {
 		HashMap<String, String> assessmentMap = new HashMap<String, String>();
 		for(int i = 1; i < grade.length; i++) {
-			assessmentMap.put(gradeCategories.get(i), grade[i]);
+			assessmentMap.put(gradeCategories.get(i-1), grade[i]);
 		}
 		return assessmentMap;
 	}

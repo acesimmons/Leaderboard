@@ -1,14 +1,14 @@
 package team6;
 import java.util.*;
 public class Gradebook {
-	private HashMap<String, HashMap> gradebookMap;
+	private HashMap<String, HashMap<String, String>> gradebookMap;
 	private String courseID;
 	
 	public void setCourseID(String courseID) {
 		this.courseID = courseID;
 	}
 	
-	public void setGradeInformation(HashMap gradebookMap) {
+	public void setGradeInformation(HashMap<String, HashMap<String, String>> gradebookMap) {
 		this.gradebookMap = gradebookMap;
 	}
 	
@@ -26,7 +26,7 @@ public class Gradebook {
 			if(key == id){
 				for(String k: value.keySet()) {
 					if(k == assessment) {
-						g  = value.get(assessment);
+						g = value.get(assessment);
 					}
 				}
 			}
