@@ -15,11 +15,11 @@ public class Controller {
 		}
 		
 		else if(command.equals("studentids")) {
-			output = database.getStudentIDs();
+			output = database.getStudentIDsConsole();
 		}
 		
 		else if(command.equals("courseids")) {
-			output = database.getCourseIDs();
+			output = database.getCourseIDsConsole();
 		}
 		
 		return output;

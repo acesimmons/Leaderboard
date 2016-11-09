@@ -12,10 +12,10 @@ public class Feature2Keyword{
 	public void startGamegogyCLIWithArguments(String type){
 		GamegogyDatabase database = new GamegogyDatabase();
 		if(type.equals("studentids")){
-			output = database.getStudentIDs();
+			output = database.getStudentIDsConsole();
 		}
 		if(type.equals("courseids")){
-			output = database.getCourseIDs();
+			output = database.getCourseIDsConsole();
 		}
 	}
 		

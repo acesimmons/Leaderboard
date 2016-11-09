@@ -8,16 +8,19 @@ import java.util.Arrays;
 public class GamegogyDatabase {
 	private List<Student> students;
 	private List<Course> courses;
+	private List<Gradebook> courseGradebook;
 	private MissingEntryException missingEntry;
 	
 	public GamegogyDatabase() {
 		students = new ArrayList<>();
 		courses = new ArrayList<>();
+		courseGradebook = new ArrayList<>();
 		
 		readStudentsFile();
 		readCoursesFile();
+		readInCourseGradeInfo();
 	}
-	public String getStudentIDs() {
+	public String getStudentIDsConsole() {
 		String studentIDs = "";
 		List<String> studentIDList = getStudentIDsList();
 		
@@ -40,7 +43,7 @@ public class GamegogyDatabase {
 		return studentIDList;
 	}
 	
-	private List<String> getCourseIDsList(){
+	public List<String> getCourseIDsList(){
 		String courseIDs = "";
 		List<String> courseIDList = new ArrayList<>();
 		for(int i = 0; i < courses.size(); i++){
@@ -50,7 +53,7 @@ public class GamegogyDatabase {
 		return courseIDList;
 	}
 	
-	public String getCourseIDs(){
+	public String getCourseIDsConsole(){
 		String courseIDs = "";
 		 List<String> courseIDList = getCourseIDsList();
 		for(int i = 0; i < courseIDList.size(); i++){
@@ -129,5 +132,60 @@ public class GamegogyDatabase {
 		
 		Course course = new Course(courseData);
 		courses.add(course);
+	}
+	
+	public List<String> getHighestGradeOf(String courseID) {
+		
+		return null;
+	}
+	
+	private void readInCourseGradeInfo(){
+		List<String> courseIDs = getCourseIDsList();
+		
+		for(int courseName = 0; courseName < courseIDs.size(); courseName++) {
+			try{
+				String fileName = "src/test/resources/courses/"+ courseIDs.get(courseName) +".csv";
+				String[] currentLine;
+			
+				CSVReader readFile = new CSVReader(new FileReader(fileName));
+			
+				readFile.readNext();
+				currentLine = readFile.readNext();
+				List<String> gradeCategories = new ArrayList<String>();
+				gradeCategories = buildCategoryData(currentLine);
+				HashMap<String, HashMap<String, String>> studentMap = new HashMap<String, HashMap<String, String>>();
+				
+				while(currentLine != null){
+					
+					currentLine = readFile.readNext();
+					studentMap.put(currentLine[0], (loadAssessmentMap(gradeCategories, currentLine)));
+				}
+				readFile.close();
+				
+				Gradebook gradebook = new Gradebook();
+				gradebook.setCourseID(courseIDs.get(courseName));
+				gradebook.setGradeInformation(studentMap);
+				courseGradebook.add(gradebook);
+			}
+			catch(IOException e){}
+		}
+	}
+	
+	private HashMap<String, String> loadAssessmentMap(List<String> gradeCategories, String[] grade) {
+		HashMap<String, String> assessmentMap = new HashMap<String, String>();
+		for(int i = 1; i < grade.length; i++) {
+			assessmentMap.put(gradeCategories.get(i), grade[i]);
+		}
+		return assessmentMap;
+	}
+	
+	private List<String> buildCategoryData(String[] dataToBeConverted) {
+		List<String> categories = new ArrayList<String>();
+		
+		for(int i = 1; i < dataToBeConverted.length; i++) {
+			categories.add(dataToBeConverted[i]);
+		}
+		
+		return categories;
 	}
 }

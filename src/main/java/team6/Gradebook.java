@@ -8,8 +8,12 @@ public class Gradebook {
 		this.courseID = courseID;
 	}
 	
-	public void setGradeInformation(HashMap<String, HashMap> gradebookMap) {
+	public void setGradeInformation(HashMap gradebookMap) {
 		this.gradebookMap = gradebookMap;
+	}
+	
+	public String getCourseID(){
+		return courseID;
 	}
 	
 	public String getGradeBasedOnStudent(String id, String assessment){
@@ -29,7 +33,5 @@ public class Gradebook {
 		}
 
 		return g;
-		
-		
 	}
 }
