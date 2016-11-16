@@ -9,7 +9,23 @@ public class GradebookTest{
     public void setUp() {
 		
     }
-	
+	@Test
+	public void testGetTopStudent() {
+		Gradebook gradebook = new Gradebook();
+		HashMap<String, String> assessmentMap = new HashMap<String, String>();
+		HashMap<String, String> assessmentMap2 = new HashMap<String, String>();
+		HashMap<String, HashMap<String, String>> gradebookMap = new HashMap<String, HashMap<String, String>>();
+		
+		assessmentMap.put("Total", "888");
+		gradebookMap.put("111142", assessmentMap);
+		
+		assessmentMap2.put("Total", "999");
+		gradebookMap.put("111392", assessmentMap2);
+		
+		gradebook.setGradeInformation(gradebookMap);
+		String topStudent = gradebook.getTopStudent("Total");
+		assertEquals("111392", topStudent);
+	}
 	@Test
 	public void testGetAssessments() {
 		Gradebook gradebook = new Gradebook();

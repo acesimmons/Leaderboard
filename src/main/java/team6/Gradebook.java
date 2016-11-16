@@ -17,6 +17,18 @@ public class Gradebook {
 	public String getCourseID(){
 		return courseID;
 	}
+	public String getTopStudent(String assessment) {
+		String topStudent = "";
+		int topGrade = -1;
+		for(String key: gradebookMap.keySet()) {
+			HashMap<String, String> value = gradebookMap.get(key);
+			if(topGrade < Integer.parseInt(value.get(assessment))) {
+				topGrade = Integer.parseInt(value.get(assessment));
+				topStudent = key;
+			}
+		}
+		return topStudent;
+	}
 	
 	public String getGradeBasedOnStudent(String id, String assessment){
 
