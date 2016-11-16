@@ -3,6 +3,8 @@ import java.util.*;
 public class Gradebook {
 	private HashMap<String, HashMap<String, String>> gradebookMap;
 	private String courseID;
+	private List<String> studentIDs;
+	private List<String> assessments;
 	
 	public void setCourseID(String courseID) {
 		this.courseID = courseID;
@@ -17,8 +19,6 @@ public class Gradebook {
 	}
 	
 	public String getGradeBasedOnStudent(String id, String assessment){
-		
-		float grade = 0.0f;
 
 		String g = "";
 		for(String key: gradebookMap.keySet()) {
@@ -33,5 +33,13 @@ public class Gradebook {
 		}
 
 		return g;
+	}
+	
+	public void setAssessments(List<String> assessments) {
+		this.assessments = assessments;
+	}
+	
+	public List<String> getAssessments() {
+		return assessments;
 	}
 }

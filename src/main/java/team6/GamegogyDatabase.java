@@ -139,6 +139,17 @@ public class GamegogyDatabase {
 		return null;
 	}
 	
+	public List<String> getCourseAssessment(String courseID) {
+		List<String> assessment = new ArrayList<>();
+		for(int i = 0; i < courseGradebook.size(); i++){
+			String currentCourseID = courseGradebook.get(i).getCourseID();
+			if(currentCourseID.equals(courseID)) {
+				assessment = courseGradebook.get(i).getAssessments();
+			}
+		}
+		return assessment;
+	}
+	
 	private void readInCourseGradeInfo(){
 		List<String> courseIDs = getCourseIDsList();
 		
@@ -149,7 +160,7 @@ public class GamegogyDatabase {
 			
 				CSVReader readFile = new CSVReader(new FileReader(fileName));
 			
-				readFile.readNext();
+				
 				currentLine = readFile.readNext();
 				List<String> gradeCategories = new ArrayList<String>();
 				gradeCategories = buildCategoryData(currentLine);
@@ -164,6 +175,7 @@ public class GamegogyDatabase {
 				
 				Gradebook gradebook = new Gradebook();
 				gradebook.setCourseID(courseIDs.get(courseName));
+				gradebook.setAssessments(gradeCategories);
 				gradebook.setGradeInformation(studentMap);
 				courseGradebook.add(gradebook);
 			}

@@ -9,6 +9,17 @@ public class GradebookTest{
     public void setUp() {
 		
     }
+	
+	@Test
+	public void testGetAssessments() {
+		Gradebook gradebook = new Gradebook();
+		List <String> gradeCategories = new ArrayList<>();
+		gradeCategories.add("test 1");
+		gradebook.setAssessments(gradeCategories);
+		List <String> assessments = gradebook.getAssessments();
+		assertEquals("test 1", assessments.get(0));
+	}
+	
 	@Test
 	public void testGetGradeOfStudent() {
 		Gradebook gradebook = new Gradebook();
@@ -22,6 +33,13 @@ public class GradebookTest{
 		String studentGrade = gradebook.getGradeBasedOnStudent("111391", "assignments 1");
 		
 		assertEquals("44.0", studentGrade);
+	}
+	@Test
+	public void testGetCourseID() {
+		Gradebook gradebook = new Gradebook();
+		gradebook.setCourseID("4444");
+		
+		assertEquals("4444", gradebook.getCourseID());
 	}
 }
 

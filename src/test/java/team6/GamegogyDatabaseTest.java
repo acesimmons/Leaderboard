@@ -55,4 +55,10 @@ public class GamegogyDatabaseTest{
 		String output = database.getCourseIDsConsole();
 		assertEquals("99000\n99001\n99002\n99003\n99004\n99005\n99006\n99007\n99008\n99009\n99010\n99011\n99012\n99013\n99014\n99015\n99016\n99017\n99018\n99019\n99020\n99021\n99022\n99023\n99024\n" ,output);
 	}
+	@Test
+	public void testGetAssessment() {
+		GamegogyDatabase database = new GamegogyDatabase();
+		List<String> assessments = database.getCourseAssessment("99004");
+		assertEquals("Total", assessments.get(0));
+	}
 }
