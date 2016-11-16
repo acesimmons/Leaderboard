@@ -2,6 +2,7 @@ package team6;
 import java.io.IOException;
 
 public class Gamegogy {
+	private Controller controller;
 	
 	public Gamegogy() {
 	}
