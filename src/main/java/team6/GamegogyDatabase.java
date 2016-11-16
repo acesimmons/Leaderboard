@@ -134,9 +134,17 @@ public class GamegogyDatabase {
 		courses.add(course);
 	}
 	
-	public List<String> getHighestGradeOf(String courseID) {
+	public Student getTopStudentData(String courseID, String assessment) {
+		Student studentObject = new Student();
+		for(int i = 0; i < courseGradebook.size(); i++){
+			String currentCourseID = courseGradebook.get(i).getCourseID();
+			if(currentCourseID.equals(courseID)) {
+				String studentID = courseGradebook.get(i).getTopStudent(assessment);
+				studentObject = getStudentData(studentID);
+			}
+		}
 		
-		return null;
+		return studentObject;
 	}
 	
 	public List<String> getCourseAssessment(String courseID) {

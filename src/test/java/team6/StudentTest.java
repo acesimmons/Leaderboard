@@ -26,6 +26,33 @@ public class StudentTest{
 		assertEquals("912", outputID);
 	}
 	
+	@Test
+	public void testGetFirstName() {
+		String[] studentvalues = {"912", "Tyler", "Brown", "tbrown14"};
+		Student student = new Student(studentvalues);
+		
+		String outputFirstName = student.getFirstName();
+		assertEquals("Tyler", outputFirstName);
+	}
+	
+	@Test
+	public void testGetLastName() {
+		String[] studentvalues = {"912", "Tyler", "Brown", "tbrown14"};
+		Student student = new Student(studentvalues);
+		
+		String outputLastName = student.getLastName();
+		assertEquals("Brown", outputLastName);
+	}
+	
+	@Test
+	public void testGetEmail() {
+		String[] studentvalues = {"912", "Tyler", "Brown", "tbrown14"};
+		Student student = new Student(studentvalues);
+		
+		String outputEmail = student.getEmail();
+		assertEquals("tbrown14", outputEmail);
+	}
+	
 }
 
 

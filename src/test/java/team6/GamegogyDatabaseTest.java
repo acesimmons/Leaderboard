@@ -10,12 +10,6 @@ public class GamegogyDatabaseTest{
     public void setUp() {
 		
     }
-	@Test
-	public void testGetGrade() {
-		GamegogyDatabase database = new GamegogyDatabase();
-		List<String> topStudent = database.getHighestGradeOf("99002");
-		
-	}
 
 	@Test
 	public void testGetStudentInfo() {
@@ -60,5 +54,13 @@ public class GamegogyDatabaseTest{
 		GamegogyDatabase database = new GamegogyDatabase();
 		List<String> assessments = database.getCourseAssessment("99004");
 		assertEquals("Total", assessments.get(0));
+	}
+	@Test
+	public void testGetTopStudentData() {
+		GamegogyDatabase database = new GamegogyDatabase();
+		Student student = database.getTopStudentData("99002", "Total");
+		String[] studentData = {"111142","Grant","Stevenson","gstevenson"};
+		Student testStudent = new Student(studentData);
+		assertEquals(testStudent.toString(),student.toString());
 	}
 }
