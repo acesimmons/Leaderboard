@@ -38,6 +38,5 @@ public class Student {
 		return lastName;
 	}
 	public String getEmail() {
-		return email;
-	}
+		return email;	}
 }

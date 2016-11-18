@@ -17,6 +17,10 @@ public class Gamegogy {
 		else if(args.length == 1) {
 			output = controller.runConsoleCommands(args[0], "");
 		}
+		else if(args.length == 0) {
+			GamegogyGUI gui = new GamegogyGUI();
+			gui.runGUI();
+		}
 		System.out.println(output);
 	}
 }

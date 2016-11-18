@@ -1,50 +1,55 @@
-
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+package team6; /**/
+import java.awt.*; /**/
+import java.util.List; /**/
+import java.util.ArrayList; /**/
+import java.util.Arrays; /**/
+import java.awt.event.*; /**/
+import javax.swing.*; /**/
 
 public class GamegogyGUI extends JFrame{
 	
 	private JPanel panel;
 	private JFrame frame;
-	private JComboBox courseList, gradeList;
-	
+	private JComboBox<String> courseList, gradeList; /**/
+	private ActionListener actionListener; /**/
+	private GamegogyDatabase database; /**/
+	private JLabel id, name, score, email, term, enrollment; /**/
 	
 	public GamegogyGUI(){
-		//super();
+		database = new GamegogyDatabase(); /**/
 		frame = new JFrame();
-		
+		id = new JLabel("ID: "); /**/ 
+		name = new JLabel("Name: "); /**/
+		score = new JLabel("Score: "); /**/
+		email = new JLabel("E-mail: "); /**/
+		term = new JLabel("Term: "); /**/
+		enrollment = new JLabel("Enrollment: "); /**/
 	}
-	
-	/*
-	public panelSize(int width, int height){
-		
-		this.width = width;
-		this.height = height;
-		
-	}*/
-	
-	/*
-	public Dimension getPreferredSize() {
-      Dimension dimension;
-      dimension = new Dimension(super.getPreferredSize());
-      if (width >= 0){dimension.width = width;}
-      if (height >= 0){dimension.height = height;}
-         
-      return dimension;
-   }
-	*/
 	
 	
 	public void addContentToWindow(){
-		
+		GamegogyDatabase database = new GamegogyDatabase(); /**/
+		List<String> courseIDList = new ArrayList<>(); /**/
+		actionListener = new ActionListener() { /**/
+			public void actionPerformed(ActionEvent event){ /**/
+				String course = (String)courseList.getSelectedItem(); /**/
+				List<String> assessmentsList = database.getCourseAssessment(course); /**/
+				String[] assessments = assessmentsList.toArray(new String[assessmentsList.size()]); /**/
+				gradeList.setModel(new DefaultComboBoxModel<String>(assessments)); /**/
+				
+			} /**/
+		}; /**/
 		Container content = frame.getContentPane();
 		
+		courseIDList = database.getCourseIDsList(); /**/
+		String[] courseIDs = courseIDList.toArray(new String[courseIDList.size()]); /**/
 		
-		courseList = new JComboBox();
+		courseList = new JComboBox<String>(courseIDs); /**/
 		courseList.setPreferredSize(new Dimension(100,25));
-       
-		gradeList = new JComboBox();
+		courseList.addActionListener(actionListener); /**/
+		
+		List<String> initialAssessments = database.getCourseAssessment(courseIDs[0]); /**/
+		gradeList = new JComboBox<String>(initialAssessments.toArray(new String[initialAssessments.size()])); /**/
 		gradeList.setPreferredSize(new Dimension(100,25));
 		
 		
@@ -52,16 +57,12 @@ public class GamegogyGUI extends JFrame{
 		GridBagLayout gb = new GridBagLayout();
 		GridBagConstraints c = new GridBagConstraints();
 		
-		/*
-		JSeparator sep = new JSeparator(JSeparator.HORIZONTAL);
-		sep.setPreferredSize(new Dimension(5,2));
-		*/
 		panel = new JPanel();
 		panel.setLayout(gb);
 		panel.setBackground(Color.lightGray);
-		panel.add(new Label("Course: "));
+		panel.add(new JLabel("Course: ")); /**/
 		panel.add(courseList);
-		panel.add(new Label("Column: "));
+		panel.add(new JLabel("Column: ")); /**/
 		panel.add(gradeList);
 		panel.setBorder(BorderFactory.createTitledBorder("Gamegogy"));	
 		
@@ -69,31 +70,31 @@ public class GamegogyGUI extends JFrame{
 		
 		c.gridx = 0;
 		c.gridy = 1;
-		panel.add(new Label("Term: "), c);
+		panel.add(term, c); /**/
 		c.gridx = 2;
 		c.gridy = 1;
-		panel.add(new Label("Enrollment: "), c);
+		panel.add(enrollment, c); /**/
 		c.gridx = 0;
 		c.gridy = 2;
 		
-		//JPanel infoPanel = new JPanel();
+
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.anchor = GridBagConstraints.PAGE_END;
 		c.insets = new Insets(25,0,0,0);
 		
 		
 		c.gridy = 2;
-		panel.add( new JLabel("ID: "), c);
+		panel.add( id, c); /**/
 		c.insets = new Insets(0,0,0,0);
 		c.weighty = 0.0;
 		c.gridy = 3;
-		panel.add(new JLabel("Name: "), c);
+		panel.add( name, c); /**/
 		c.weighty = 0.0;
 		c.gridy = 4;
-		panel.add(new JLabel("E-mail: "), c);
+		panel.add(email, c); /**/
 		c.weighty = 0.0;
 		c.gridy = 5;
-		panel.add(new JLabel("Score: "), c);
+		panel.add(score, c); /**/
 
 		
 		
@@ -111,9 +112,8 @@ public class GamegogyGUI extends JFrame{
 	
 
 	
-	public static void main(String[] args){
-		GamegogyGUI window = new GamegogyGUI();
-		window.addContentToWindow();
+	public void runGUI(){
+		addContentToWindow();
         
 	}
 	
