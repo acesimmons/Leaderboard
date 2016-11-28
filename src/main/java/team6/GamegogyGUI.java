@@ -10,7 +10,7 @@ public class GamegogyGUI extends JFrame{
 	
 	private JPanel panel;
 	private JFrame frame;
-	private JComboBox<String> courseList, gradeList; /**/
+	private JComboBox<String> courseComboBox, gradeList; /**/
 	private ActionListener actionListener; /**/
 	private GamegogyDatabase database; /**/
 	private JLabel id, name, score, email, term, enrollment; /**/
@@ -32,7 +32,7 @@ public class GamegogyGUI extends JFrame{
 		List<String> courseIDList = new ArrayList<>(); /**/
 		actionListener = new ActionListener() { /**/
 			public void actionPerformed(ActionEvent event){ /**/
-				if(event.getSource() == courseList) { /**/
+				if(event.getSource() == courseComboBox) { /**/
 					updateLabelsBasedOnCourseSelected(); /**/
 				}
 				else if(event.getSource() == gradeList){ /**/
@@ -46,9 +46,9 @@ public class GamegogyGUI extends JFrame{
 		courseIDList = database.getCourseIDsList(); /**/
 		String[] courseIDs = courseIDList.toArray(new String[courseIDList.size()]); /**/
 		
-		courseList = new JComboBox<String>(courseIDs); /**/
-		courseList.setPreferredSize(new Dimension(100,25));
-		courseList.addActionListener(actionListener); /**/
+		courseComboBox = new JComboBox<String>(courseIDs); /**/
+		courseComboBox.setPreferredSize(new Dimension(100,25));
+		courseComboBox.addActionListener(actionListener); /**/
 		
 		List<String> initialAssessments = database.getCourseAssessment(courseIDs[0]); /**/
 		gradeList = new JComboBox<String>(initialAssessments.toArray(new String[initialAssessments.size()])); /**/
@@ -62,7 +62,7 @@ public class GamegogyGUI extends JFrame{
 		panel.setLayout(gb);
 		panel.setBackground(Color.lightGray);
 		panel.add(new JLabel("Course: ")); /**/
-		panel.add(courseList);
+		panel.add(courseComboBox);
 		panel.add(new JLabel("Column: ")); /**/
 		panel.add(gradeList);
 		panel.setBorder(BorderFactory.createTitledBorder("Gamegogy"));	
@@ -104,7 +104,7 @@ public class GamegogyGUI extends JFrame{
 	}
 	
 	private void updateLabelsBasedOnCourseSelected() { /**/
-		String course = (String)courseList.getSelectedItem(); /**/
+		String course = (String)courseComboBox.getSelectedItem(); /**/
 		List<String> assessmentsList = database.getCourseAssessment(course); /**/
 		String[] assessments = assessmentsList.toArray(new String[assessmentsList.size()]); /**/
 		gradeList.setModel(new DefaultComboBoxModel<String>(assessments)); /**/
@@ -119,7 +119,7 @@ public class GamegogyGUI extends JFrame{
 	}
 	
 	private void updateLabelsBasedOnAssessmentSelected() { /**/
-		String course = (String)courseList.getSelectedItem(); /**/
+		String course = (String)courseComboBox.getSelectedItem(); /**/
 		String assessment = (String)gradeList.getSelectedItem(); /**/
 		Student student = database.getTopStudentData(course, assessment); /**/
 		id.setText("ID: " + student.getID()); /**/ 

@@ -5,8 +5,8 @@ Library  SwingLibrary
 Test Gamegogy Default Values
 	Start Application  team6.Gamegogy
     Select Window  Gamegogy
-    ${courseId}=  Get Selected Item From Combo Box  courseComboBox
-    Should Be Equal  99000  ${courseId}
+    ${courseId}=   Get Selected Item From Combo Box  courseComboBox
+    Should Be Equal   99000  ${courseId}
     ${columnName}=  Get Selected Item From Combo Box  columnComboBox
     Should Be Equal  Total  ${columnName}
 	Label Text Should Be  courseTerm  Spring 2013
