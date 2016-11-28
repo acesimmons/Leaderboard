@@ -19,7 +19,7 @@ public class Gamegogy {
 		}
 		else if(args.length == 0) {
 			GamegogyGUI gui = new GamegogyGUI();
-			gui.runGUI();
+			gui.startApplication();
 		}
 		System.out.println(output);
 	}

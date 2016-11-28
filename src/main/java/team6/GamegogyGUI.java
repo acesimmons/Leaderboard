@@ -131,7 +131,7 @@ public class GamegogyGUI extends JFrame{
 	
 
 	
-	public void runGUI(){
+	public void startApplication(){
 		addContentToWindow();
         
 	}
