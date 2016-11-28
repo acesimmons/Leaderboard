@@ -26,6 +26,30 @@ public class CourseTest{
 		String outputID = course.getID();
 		assertEquals("22222", outputID);
 	}
+	@Test
+	public void courseReturnsSemester() {
+		String[] courseValues = {"22222", "Spring", "2002", "6"};
+		Course course = new Course(courseValues);
+		
+		String outputID = course.getSemester();
+		assertEquals("Spring", outputID);
+	}
+	@Test
+	public void courseReturnsYear() {
+		String[] courseValues = {"22222", "Spring", "2002", "6"};
+		Course course = new Course(courseValues);
+		
+		String outputID = course.getYear();
+		assertEquals("2002", outputID);
+	}
+	@Test
+	public void courseReturnsClassSize() {
+		String[] courseValues = {"22222", "Spring", "2002", "6"};
+		Course course = new Course(courseValues);
+		
+		String outputID = course.getClassSize();
+		assertEquals("6", outputID);
+	}
 }
 
 

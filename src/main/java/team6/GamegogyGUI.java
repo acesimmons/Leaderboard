@@ -28,21 +28,16 @@ public class GamegogyGUI extends JFrame{
 	
 	
 	public void addContentToWindow(){
-		GamegogyDatabase database = new GamegogyDatabase(); /**/
+		
 		List<String> courseIDList = new ArrayList<>(); /**/
 		actionListener = new ActionListener() { /**/
 			public void actionPerformed(ActionEvent event){ /**/
-				if(event.getSource() == courseList) {
-					String course = (String)courseList.getSelectedItem(); /**/
-					List<String> assessmentsList = database.getCourseAssessment(course); /**/
-					String[] assessments = assessmentsList.toArray(new String[assessmentsList.size()]); /**/
-					gradeList.setModel(new DefaultComboBoxModel<String>(assessments)); /**/
-					Student student = database.getTopStudentData(course, assessments[0]);
-					id.setText("ID: " + student.getID()); /**/ 
-					name.setText("Name: " + student.getFirstName()); /**/
-					score.setText("Score: "); /**/
-					email.setText("E-mail: " + student.getEmail()); /**/
+				if(event.getSource() == courseList) { /**/
+					updateLabelsBasedOnCourseSelected(); /**/
 				}
+				else if(event.getSource() == gradeList){ /**/
+					updateLabelsBasedOnAssessmentSelected(); /**/
+				} /**/
 				
 			} /**/
 		}; /**/
@@ -58,6 +53,7 @@ public class GamegogyGUI extends JFrame{
 		List<String> initialAssessments = database.getCourseAssessment(courseIDs[0]); /**/
 		gradeList = new JComboBox<String>(initialAssessments.toArray(new String[initialAssessments.size()])); /**/
 		gradeList.setPreferredSize(new Dimension(100,25));
+		gradeList.addActionListener(actionListener);
 		
 		GridBagLayout gb = new GridBagLayout();
 		GridBagConstraints c = new GridBagConstraints();
@@ -104,8 +100,33 @@ public class GamegogyGUI extends JFrame{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
         frame.setVisible(true);
+        updateLabelsBasedOnCourseSelected();
 	}
 	
+	private void updateLabelsBasedOnCourseSelected() { /**/
+		String course = (String)courseList.getSelectedItem(); /**/
+		List<String> assessmentsList = database.getCourseAssessment(course); /**/
+		String[] assessments = assessmentsList.toArray(new String[assessmentsList.size()]); /**/
+		gradeList.setModel(new DefaultComboBoxModel<String>(assessments)); /**/
+		Student student = database.getTopStudentData(course, assessments[0]); /**/
+		id.setText("ID: " + student.getID()); /**/ 
+		name.setText("Name: " + student.getFirstName()); /**/
+		score.setText("Score: " + database.getStudentGrade(course, assessments[0], student.getID())); /**/
+		email.setText("E-mail: " + student.getEmail() + "@jsu.edu"); /**/
+		Course courseObj = database.getCourseData(course); /**/
+		term.setText("Term: " + courseObj.getSemester() + " " + courseObj.getYear() ); /**/
+		enrollment.setText("Enrollment: " + courseObj.getClassSize() ); /**/
+	}
+	
+	private void updateLabelsBasedOnAssessmentSelected() { /**/
+		String course = (String)courseList.getSelectedItem(); /**/
+		String assessment = (String)gradeList.getSelectedItem(); /**/
+		Student student = database.getTopStudentData(course, assessment); /**/
+		id.setText("ID: " + student.getID()); /**/ 
+		name.setText("Name: " + student.getFirstName()); /**/
+		score.setText("Score: " + database.getStudentGrade(course, assessment, student.getID())); /**/
+		email.setText("E-mail: " + student.getEmail() + "@jsu.edu"); /**/
+	}
 
 	
 

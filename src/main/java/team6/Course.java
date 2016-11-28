@@ -23,5 +23,15 @@ public class Course {
 	public String getID() {
 		return id;
 	}
-
+	
+	public String getSemester() {
+		return semester;
+	}
+	
+	public String getYear() {
+		return year;
+	}
+	public String getClassSize() {
+		return classSize;
+	}
 }

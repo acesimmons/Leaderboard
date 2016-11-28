@@ -63,4 +63,13 @@ public class GamegogyDatabaseTest{
 		Student testStudent = new Student(studentData);
 		assertEquals(testStudent.toString(),student.toString());
 	}
+	@Test
+	public void testGetStudentGrade() {
+		GamegogyDatabase database = new GamegogyDatabase();
+		String courseID = "99002";
+		String assessment = "Total";
+		String studentID = "111142";
+		String grade = database.getStudentGrade(courseID, assessment, studentID);
+		assertEquals("873",grade);
+	}
 }

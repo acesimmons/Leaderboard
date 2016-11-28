@@ -35,9 +35,9 @@ public class Gradebook {
 		String g = "";
 		for(String key: gradebookMap.keySet()) {
 			HashMap<String, String> value = gradebookMap.get(key);
-			if(key == id){
+			if(key.equals(id)){
 				for(String k: value.keySet()) {
-					if(k == assessment) {
+					if(k.equals(assessment)) {
 						g = value.get(assessment);
 					}
 				}

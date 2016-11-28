@@ -146,6 +146,16 @@ public class GamegogyDatabase {
 		
 		return studentObject;
 	}
+	public String getStudentGrade(String courseID, String assessment, String studentID) {
+		String grade = "";
+		for(int i = 0; i < courseGradebook.size(); i++){
+			String currentCourseID = courseGradebook.get(i).getCourseID();
+			if(currentCourseID.equals(courseID)) {
+				grade = courseGradebook.get(i).getGradeBasedOnStudent(studentID, assessment);
+			}
+		}
+		return grade;
+	}
 	
 	public List<String> getCourseAssessment(String courseID) {
 		List<String> assessment = new ArrayList<>();
