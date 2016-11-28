@@ -32,10 +32,17 @@ public class GamegogyGUI extends JFrame{
 		List<String> courseIDList = new ArrayList<>(); /**/
 		actionListener = new ActionListener() { /**/
 			public void actionPerformed(ActionEvent event){ /**/
-				String course = (String)courseList.getSelectedItem(); /**/
-				List<String> assessmentsList = database.getCourseAssessment(course); /**/
-				String[] assessments = assessmentsList.toArray(new String[assessmentsList.size()]); /**/
-				gradeList.setModel(new DefaultComboBoxModel<String>(assessments)); /**/
+				if(event.getSource() == courseList) {
+					String course = (String)courseList.getSelectedItem(); /**/
+					List<String> assessmentsList = database.getCourseAssessment(course); /**/
+					String[] assessments = assessmentsList.toArray(new String[assessmentsList.size()]); /**/
+					gradeList.setModel(new DefaultComboBoxModel<String>(assessments)); /**/
+					Student student = database.getTopStudentData(course, assessments[0]);
+					id.setText("ID: " + student.getID()); /**/ 
+					name.setText("Name: " + student.getFirstName()); /**/
+					score.setText("Score: "); /**/
+					email.setText("E-mail: " + student.getEmail()); /**/
+				}
 				
 			} /**/
 		}; /**/
@@ -51,8 +58,6 @@ public class GamegogyGUI extends JFrame{
 		List<String> initialAssessments = database.getCourseAssessment(courseIDs[0]); /**/
 		gradeList = new JComboBox<String>(initialAssessments.toArray(new String[initialAssessments.size()])); /**/
 		gradeList.setPreferredSize(new Dimension(100,25));
-		
-		
 		
 		GridBagLayout gb = new GridBagLayout();
 		GridBagConstraints c = new GridBagConstraints();
@@ -76,12 +81,10 @@ public class GamegogyGUI extends JFrame{
 		panel.add(enrollment, c); /**/
 		c.gridx = 0;
 		c.gridy = 2;
-		
-
+	
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.anchor = GridBagConstraints.PAGE_END;
 		c.insets = new Insets(25,0,0,0);
-		
 		
 		c.gridy = 2;
 		panel.add( id, c); /**/
@@ -95,17 +98,12 @@ public class GamegogyGUI extends JFrame{
 		c.weighty = 0.0;
 		c.gridy = 5;
 		panel.add(score, c); /**/
-
-		
 		
 		frame.setTitle("Gamegogy");
 		frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
         frame.setVisible(true);
-		
-		
-		
 	}
 	
 
