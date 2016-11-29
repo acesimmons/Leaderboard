@@ -5,7 +5,7 @@ Library  SwingLibrary
 Test Gamegogy Default Values
 	Start Application  team6.Gamegogy
     Select Window  Gamegogy
-    ${courseId}=   Get Selected Item From Combo Box  courseComboBox
+    ${courseId}=  Get Selected Item From Combo Box  courseComboBox
     Should Be Equal   99000  ${courseId}
     ${columnName}=  Get Selected Item From Combo Box  columnComboBox
     Should Be Equal  Total  ${columnName}
@@ -15,4 +15,4 @@ Test Gamegogy Default Values
     Label Text Should Be  studentName  Cathleen Guzman
 	Label Text Should Be  studentEmail  cguzman@jsu.edu
     Label Text Should Be  studentScore  925.0
-    Close Window  GamegogyGui
+    Close Window  Gamegogy
