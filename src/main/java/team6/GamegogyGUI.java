@@ -66,7 +66,7 @@ public class GamegogyGUI extends JFrame{
 		
 		List<String> initialAssessments = database.getCourseAssessment(courseIDs[0]);
 		gradeList = new JComboBox<String>(initialAssessments.toArray(new String[initialAssessments.size()]));
-		gradeList.setPreferredSize(new Dimension(180,25));
+		gradeList.setPreferredSize(new Dimension(130,25));
 		gradeList.addActionListener(actionListener);
 		gradeList.setName("columnComboBox");
 		
@@ -76,41 +76,37 @@ public class GamegogyGUI extends JFrame{
 		panel = new JPanel();
 		panel.setLayout(gb);
 		panel.setBackground(Color.lightGray);
-		c.anchor = GridBagConstraints.CENTER;
+		c.anchor = GridBagConstraints.LINE_START;
 		panel.add(new JLabel("Course: "), c);
-		c.weightx = -2.4;
+		c.weightx = 2.4;
 		panel.add(courseComboBox, c);
+		c.anchor = GridBagConstraints.LINE_END;
 		panel.add(new JLabel("Column: "), c);
 		panel.add(gradeList);
 		panel.setBorder(BorderFactory.createTitledBorder("Gamegogy"));	
-		
 		c.anchor = GridBagConstraints.LINE_START;
 		c.insets = new Insets(75,0,75,0);
 		c.gridx = 0;
 		c.gridy = 1;
-		c.anchor = GridBagConstraints.CENTER;
 		panel.add(courseLabel, c);
 		
-		c.anchor = GridBagConstraints.LINE_START;
 		c.gridx = 1;
 		panel.add(courseTerm, c);
 		c.gridx = 2;
 		c.gridy = 1;
-		c.anchor = GridBagConstraints.CENTER;
 		panel.add(enrollmentLabel, c);
 		c.gridx = 3;
-		c.anchor = GridBagConstraints.LINE_START;
 		panel.add(enrollment, c);
 		c.gridx = 0;
 		c.gridy = 2;
 		c.fill = GridBagConstraints.HORIZONTAL;
 		c.insets = new Insets(25,0,0,0);
 		
-		c.anchor = GridBagConstraints.LINE_START;
 		c.gridy = 2;
 		panel.add( idLabel, c);
 		c.gridx = 1;
-		c.weightx = -9.4;
+		c.weightx = 3.4;
+		c.gridwidth = 2;
 		panel.add( id, c);
 		c.gridx = 0;
 		c.insets = new Insets(0,0,0,0);
