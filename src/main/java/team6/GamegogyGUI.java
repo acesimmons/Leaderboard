@@ -76,7 +76,7 @@ public class GamegogyGUI extends JFrame{
 		
 		panel = new JPanel();
 		panel.setLayout(gb);
-		panel.setBackground(Color.lightGray);
+		panel.setBackground(Color.white);
 		c.anchor = GridBagConstraints.LINE_START;
 		panel.add(new JLabel("Course: "), c);
 		c.weightx = 2.4;

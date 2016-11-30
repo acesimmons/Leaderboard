@@ -94,9 +94,7 @@ public class GamegogyDatabase {
 		
 		readFile.close();
 		}
-		catch(IOException e){
-			System.out.println("The Students file has gone missing.");
-		}
+		catch(IOException e){}
 	}
 	
 	private void placeStudentInStudentsList(String[] studentData){
@@ -123,9 +121,7 @@ public class GamegogyDatabase {
 		
 		readFile.close();
 		}
-		catch(IOException e){
-			System.out.println("The Courses file has gone missing.");
-		}
+		catch(IOException e){}
 	}
 	
 	private void placeCourseInCoursesList(String[] courseData){
