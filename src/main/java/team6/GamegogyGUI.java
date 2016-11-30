@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 
 public class GamegogyGUI extends JFrame{
 	
@@ -83,7 +84,9 @@ public class GamegogyGUI extends JFrame{
 		c.anchor = GridBagConstraints.LINE_END;
 		panel.add(new JLabel("Column: "), c);
 		panel.add(gradeList);
-		panel.setBorder(BorderFactory.createTitledBorder("Gamegogy"));	
+		TitledBorder border = BorderFactory.createTitledBorder("Gamegogy");
+		border.setTitleJustification(TitledBorder.CENTER);
+		panel.setBorder(border);	
 		c.anchor = GridBagConstraints.LINE_START;
 		c.insets = new Insets(75,0,75,0);
 		c.gridx = 0;
@@ -128,6 +131,7 @@ public class GamegogyGUI extends JFrame{
 		frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
+		frame.setResizable(false);
         frame.setVisible(true);
         updateLabelsBasedOnCourseSelected();
 	}
