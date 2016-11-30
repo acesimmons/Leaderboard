@@ -13,17 +13,23 @@ public class GamegogyGUI extends JFrame{
 	private JComboBox<String> courseComboBox, gradeList; /**/
 	private ActionListener actionListener; /**/
 	private GamegogyDatabase database; /**/
-	private JLabel id, name, score, email, courseTerm, enrollment; /**/
+	private JLabel id, name, score, email, courseTerm, enrollment, courseLabel, enrollmentLabel, idLabel, nameLabel, scoreLabel, emailLabel; /**/
 	
 	public GamegogyGUI(){
 		database = new GamegogyDatabase(); /**/
 		frame = new JFrame();
-		id = new JLabel("ID: "); /**/ 
-		name = new JLabel("Name: "); /**/
-		score = new JLabel("Score: "); /**/
-		email = new JLabel("E-mail: "); /**/
-		courseTerm = new JLabel("Term: "); /**/
-		enrollment = new JLabel("Enrollment: "); /**/
+		idLabel = new JLabel("ID: ");
+		id = new JLabel(""); /**/ 
+		nameLabel = new JLabel("Name: ");
+		name = new JLabel(""); /**/
+		scoreLabel = new JLabel("Score: ");
+		score = new JLabel(""); /**/
+		emailLabel = new JLabel("E-mail: ");
+		email = new JLabel(""); /**/
+		courseLabel = new JLabel("Term: ");
+		courseTerm = new JLabel(""); /**/
+		enrollmentLabel = new JLabel("Enrollment: ");
+		enrollment = new JLabel(""); /**/
 		id.setName("studentId");
 		name.setName("studentName");
 		score.setName("studentScore");
@@ -55,12 +61,12 @@ public class GamegogyGUI extends JFrame{
 		
 		courseComboBox = new JComboBox<String>(courseIDs); /**/
 		courseComboBox.setName("courseComboBox");
-		courseComboBox.setPreferredSize(new Dimension(200,25));
+		courseComboBox.setPreferredSize(new Dimension(100,25));
 		courseComboBox.addActionListener(actionListener); /**/
 		
 		List<String> initialAssessments = database.getCourseAssessment(courseIDs[0]); /**/
 		gradeList = new JComboBox<String>(initialAssessments.toArray(new String[initialAssessments.size()])); /**/
-		gradeList.setPreferredSize(new Dimension(100,25));
+		gradeList.setPreferredSize(new Dimension(250,25));
 		gradeList.addActionListener(actionListener);
 		gradeList.setName("columnComboBox");
 		
@@ -70,39 +76,49 @@ public class GamegogyGUI extends JFrame{
 		panel = new JPanel();
 		panel.setLayout(gb);
 		panel.setBackground(Color.lightGray);
-		panel.add(new JLabel("Course: ")); /**/
-		panel.add(courseComboBox);
-		panel.add(new JLabel("Column: ")); /**/
+		c.anchor = GridBagConstraints.CENTER;
+		panel.add(new JLabel("Course: "), c); /**/
+		c.weightx = -2.4;
+		panel.add(courseComboBox, c);
+		panel.add(new JLabel("Column: "), c); /**/
 		panel.add(gradeList);
 		panel.setBorder(BorderFactory.createTitledBorder("Gamegogy"));	
 		
+		c.anchor = GridBagConstraints.LINE_START;
 		c.insets = new Insets(75,0,75,0);
-		
 		c.gridx = 0;
 		c.gridy = 1;
-		panel.add(courseTerm, c); /**/
+		c.anchor = GridBagConstraints.CENTER;
+		panel.add(courseLabel, c); /**/
+		
+		c.anchor = GridBagConstraints.LINE_END;
+		panel.add(courseTerm, c);
 		c.gridx = 2;
 		c.gridy = 1;
-		panel.add(enrollment, c); /**/
+		c.anchor = GridBagConstraints.CENTER;
+		panel.add(enrollmentLabel, c); /**/
+		c.weightx = 6.4;
+		c.anchor = GridBagConstraints.LINE_END;
+		panel.add(enrollment, c);
 		c.gridx = 0;
 		c.gridy = 2;
-	
 		c.fill = GridBagConstraints.HORIZONTAL;
-		c.anchor = GridBagConstraints.PAGE_END;
 		c.insets = new Insets(25,0,0,0);
 		
+		c.anchor = GridBagConstraints.LINE_START;
 		c.gridy = 2;
-		panel.add( id, c); /**/
+		panel.add( idLabel, c); /**/
+		c.gridx = 1;
+		c.weightx = -9.4;
+		panel.add( id, c);
+		c.gridx = 0;
 		c.insets = new Insets(0,0,0,0);
-		c.weighty = 0.0;
 		c.gridy = 3;
-		panel.add( name, c); /**/
-		c.weighty = 0.0;
+		panel.add( nameLabel, c); /**/
 		c.gridy = 4;
-		panel.add(email, c); /**/
-		c.weighty = 0.0;
+		panel.add(emailLabel, c); /**/
 		c.gridy = 5;
-		panel.add(score, c); /**/
+		panel.add(scoreLabel, c); /**/
 		
 		frame.setTitle("Gamegogy");
 		frame.setContentPane(panel);
@@ -118,23 +134,23 @@ public class GamegogyGUI extends JFrame{
 		String[] assessments = assessmentsList.toArray(new String[assessmentsList.size()]); /**/
 		gradeList.setModel(new DefaultComboBoxModel<String>(assessments)); /**/
 		Student student = database.getTopStudentData(course, assessments[0]); /**/
-		id.setText("ID: " + student.getID()); /**/ 
-		name.setText("Name: " + student.getFirstName()); /**/
-		score.setText("Score: " + database.getStudentGrade(course, assessments[0], student.getID())); /**/
-		email.setText("E-mail: " + student.getEmail() + "@jsu.edu"); /**/
+		id.setText(student.getID()); /**/ 
+		name.setText(student.getFirstName()); /**/
+		score.setText(database.getStudentGrade(course, assessments[0], student.getID())); /**/
+		email.setText(student.getEmail() + "@jsu.edu"); /**/
 		Course courseObj = database.getCourseData(course); /**/
-		courseTerm.setText("Term: " + courseObj.getSemester() + " " + courseObj.getYear() ); /**/
-		enrollment.setText("Enrollment: " + courseObj.getClassSize() ); /**/
+		courseTerm.setText(courseObj.getSemester() + " " + courseObj.getYear() ); /**/
+		enrollment.setText(courseObj.getClassSize() ); /**/
 	}
 	
 	private void updateLabelsBasedOnAssessmentSelected() { /**/
 		String course = (String)courseComboBox.getSelectedItem(); /**/
 		String assessment = (String)gradeList.getSelectedItem(); /**/
 		Student student = database.getTopStudentData(course, assessment); /**/
-		id.setText("ID: " + student.getID()); /**/ 
-		name.setText("Name: " + student.getFirstName()); /**/
-		score.setText("Score: " + database.getStudentGrade(course, assessment, student.getID())); /**/
-		email.setText("E-mail: " + student.getEmail() + "@jsu.edu"); /**/
+		id.setText(student.getID()); /**/ 
+		name.setText(student.getFirstName()); /**/
+		score.setText(database.getStudentGrade(course, assessment, student.getID())); /**/
+		email.setText(student.getEmail() + "@jsu.edu"); /**/
 	}
 	
 	
