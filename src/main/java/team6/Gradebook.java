@@ -32,19 +32,19 @@ public class Gradebook {
 	
 	public String getGradeBasedOnStudent(String id, String assessment){
 
-		String g = "";
+		String grade = "";
 		for(String key: gradebookMap.keySet()) {
 			HashMap<String, String> value = gradebookMap.get(key);
 			if(key.equals(id)){
 				for(String k: value.keySet()) {
 					if(k.equals(assessment)) {
-						g = value.get(assessment);
+						grade = value.get(assessment);
 					}
 				}
 			}
 		}
 
-		return g;
+		return grade;
 	}
 	
 	public void setAssessments(List<String> assessments) {

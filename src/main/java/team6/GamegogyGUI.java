@@ -71,62 +71,59 @@ public class GamegogyGUI extends JFrame{
 		gradeList.addActionListener(actionListener);
 		gradeList.setName("columnComboBox");
 		
-		GridBagLayout gb = new GridBagLayout();
-		GridBagConstraints c = new GridBagConstraints();
+		GridBagConstraints constraints = new GridBagConstraints();
 		
-		panel = new JPanel();
-		panel.setLayout(gb);
+		panel = new JPanel(new GridBagLayout());
 		panel.setBackground(Color.white);
-		c.anchor = GridBagConstraints.LINE_START;
-		panel.add(new JLabel("Course: "), c);
-		c.weightx = 2.4;
-		panel.add(courseComboBox, c);
-		c.anchor = GridBagConstraints.LINE_END;
-		panel.add(new JLabel("Column: "), c);
+		constraints.anchor = GridBagConstraints.LINE_START;
+		panel.add(new JLabel("Course: "), constraints);
+		constraints.weightx = 2.4;
+		panel.add(courseComboBox, constraints);
+		constraints.anchor = GridBagConstraints.LINE_END;
+		panel.add(new JLabel("Column: "), constraints);
 		panel.add(gradeList);
 		TitledBorder border = BorderFactory.createTitledBorder("Gamegogy");
 		border.setTitleJustification(TitledBorder.CENTER);
 		panel.setBorder(border);	
-		c.anchor = GridBagConstraints.LINE_START;
-		c.insets = new Insets(75,0,75,0);
-		c.gridx = 0;
-		c.gridy = 1;
-		panel.add(courseLabel, c);
+		constraints.anchor = GridBagConstraints.LINE_START;
+		constraints.insets = new Insets(75,0,75,0);
+		constraints.gridx = 0;
+		constraints.gridy = 1;
+		panel.add(courseLabel, constraints);
 		
-		c.gridx = 1;
-		panel.add(courseTerm, c);
-		c.gridx = 2;
-		c.gridy = 1;
-		panel.add(enrollmentLabel, c);
-		c.gridx = 3;
-		panel.add(enrollment, c);
-		c.gridx = 0;
-		c.gridy = 2;
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.insets = new Insets(25,0,0,0);
+		constraints.gridx = 1;
+		panel.add(courseTerm, constraints);
+		constraints.gridx = 2;
+		constraints.gridy = 1;
+		panel.add(enrollmentLabel, constraints);
+		constraints.gridx = 3;
+		panel.add(enrollment, constraints);
+		constraints.gridx = 0;
+		constraints.gridy = 2;
+		constraints.fill = GridBagConstraints.HORIZONTAL;
+		constraints.insets = new Insets(25,0,0,0);
 		
-		c.gridy = 2;
-		panel.add( idLabel, c);
-		c.gridx = 1;
-		c.weightx = 3.4;
-		c.gridwidth = 2;
-		panel.add( id, c);
-		c.gridx = 0;
-		c.insets = new Insets(0,0,0,0);
-		c.gridy = 3;
-		panel.add( nameLabel, c);
-		c.gridx = 1;
-		panel.add( name, c);
-		c.gridx = 0;
-		c.gridy = 4;
-		panel.add(emailLabel, c);
-		c.gridx = 1;
-		panel.add(email, c);
-		c.gridx = 0;
-		c.gridy = 5;
-		panel.add(scoreLabel, c);
-		c.gridx = 1;
-		panel.add(score, c);
+		constraints.gridy = 2;
+		panel.add( idLabel, constraints);
+		constraints.gridx = 1;
+		constraints.gridwidth = 2;
+		panel.add( id, constraints);
+		constraints.gridx = 0;
+		constraints.insets = new Insets(0,0,0,0);
+		constraints.gridy = 3;
+		panel.add( nameLabel, constraints);
+		constraints.gridx = 1;
+		panel.add( name, constraints);
+		constraints.gridx = 0;
+		constraints.gridy = 4;
+		panel.add(emailLabel, constraints);
+		constraints.gridx = 1;
+		panel.add(email, constraints);
+		constraints.gridx = 0;
+		constraints.gridy = 5;
+		panel.add(scoreLabel, constraints);
+		constraints.gridx = 1;
+		panel.add(score, constraints);
 		frame.setTitle("Gamegogy");
 		frame.setContentPane(panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -144,11 +141,11 @@ public class GamegogyGUI extends JFrame{
 		Student student = database.getTopStudentData(course, assessments[0]);
 		id.setText(student.getID()); 
 		name.setText(student.getFirstName() + " " + student.getLastName());
-		String g = database.getStudentGrade(course, assessments[0], student.getID());
-		if(g.contains(".") == false){
-			g += ".0";
+		String grade = database.getStudentGrade(course, assessments[0], student.getID());
+		if(grade.contains(".") == false){
+			grade += ".0";
 		}
-		score.setText(g);
+		score.setText(grade);
 		email.setText(student.getEmail() + "@jsu.edu");
 		Course courseObj = database.getCourseData(course);
 		courseTerm.setText(courseObj.getSemester() + " " + courseObj.getYear() );
@@ -161,11 +158,11 @@ public class GamegogyGUI extends JFrame{
 		Student student = database.getTopStudentData(course, assessment);
 		id.setText(student.getID()); 
 		name.setText(student.getFirstName() + " " + student.getLastName());
-		String g = database.getStudentGrade(course, assessment, student.getID());
-		if(g.contains(".") == false){
-			g += ".0";
+		String grade = database.getStudentGrade(course, assessment, student.getID());
+		if(grade.contains(".") == false){
+			grade += ".0";
 		}
-		score.setText(g);
+		score.setText(grade);
 		email.setText(student.getEmail() + "@jsu.edu");
 	}
 	
